@@ -1,2 +1,2 @@
-# Competetion-Work
-Sources of our work for THU Software Dev Competition
+# 目前啥都没有，连画饼都没有
+这里也许会出现一个参加比赛的游戏的源码
