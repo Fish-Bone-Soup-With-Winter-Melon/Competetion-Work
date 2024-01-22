@@ -5,6 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]serSettings/
+[Pp]serSettings/
 *.tmproj
 *.csproj
 *.unityproj
