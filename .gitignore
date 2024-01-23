@@ -6,6 +6,8 @@
 [Ll]ogs/
 [Uu]serSettings/
 [Pp]rojectSettings/
+[Pp]ackages/
+[Pp]ackageCache/
 *.tmproj
 *.csproj
 *.unityproj
