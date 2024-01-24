@@ -8,7 +8,8 @@ public class MapManager : MonoBehaviour
 
     public void GenerateMap()
     {
-        // 生成地图，包括平台、障碍物等
+        Manager manager = new Manager();
+        manager.Load();
     }
 
     void UpdateMap()

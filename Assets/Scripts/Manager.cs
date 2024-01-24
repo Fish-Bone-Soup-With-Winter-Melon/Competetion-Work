@@ -7,16 +7,17 @@ using UnityEngine.Tilemaps;
 
 public class Manager : MonoBehaviour
 {
-    public Tilemap Ground, Ice;
+    public Tilemap Ground, Ice , Mud;
     public List<TileBase> tiles = new List<TileBase>();
     [ContextMenu("save")]
 
     public void test()
     {
-        TileMapHandler Tilemaphandler = new TileMapHandler(Ground , Ice);
+        TileMapHandler Tilemaphandler = new TileMapHandler(Ground , Ice , Mud);
         Tilemaphandler.MapToJson("map_0", new Vector2Int(20 , 11));
 
     }
+
     [ContextMenu("Load")]
     public void Load()
     {
@@ -35,6 +36,10 @@ public class Manager : MonoBehaviour
         {
             Ice.SetTile(new Vector3Int(item.x, item.y, 0), tiles.Where(i => i.name == item.tileName).FirstOrDefault());
         }
+        foreach (Tile item in map.mudTiles)
+        {
+            Mud.SetTile(new Vector3Int(item.x, item.y, 0), tiles.Where(i => i.name == item.tileName).FirstOrDefault());
+        }
     }
 
     [ContextMenu("clear")]
@@ -43,5 +48,6 @@ public class Manager : MonoBehaviour
     {
         Ground.ClearAllTiles();
         Ice.ClearAllTiles();
+        Mud.ClearAllTiles();
     }
 }

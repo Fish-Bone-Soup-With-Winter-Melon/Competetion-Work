@@ -11,6 +11,13 @@ public class PlayerController : MonoBehaviour
 
     public UIManager uiManager;
     public PropManager propManager;
+    private LayerMask GroundLayer;
+    private LayerMask IceLayer;
+    private LayerMask MudLayer;
+
+    private bool isGround;
+    private bool isIce;
+    private bool isMud;
 
     void Move()
     {
@@ -29,6 +36,11 @@ public class PlayerController : MonoBehaviour
 
     public void CheckCollision()
     {
+        Vector2 player_pos = this.transform.position;
+        isGround = Physics2D.OverLapCircle(player_pos, 0.1f, GroundLayer);         //检测逻辑：以物体的当前位置为圆心，0.1f为半径，检测是否与GroundLayer相交
+        isIce = Physics2D.OverLapCircle(player_pos, 0.1f, IceLayer);              
+        isMud = Physics2D.OverLapCircle(player_pos, 0.1f, MudLayer);
         // 检测玩家与地图元素的碰撞
+
     }
 }

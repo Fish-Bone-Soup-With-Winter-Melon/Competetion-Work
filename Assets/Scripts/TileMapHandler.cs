@@ -10,11 +10,12 @@ using UnityEngine.TextCore.Text;
 
 public class TileMapHandler
 {
-    public Tilemap Ground, Ice; 
-    public TileMapHandler(Tilemap Ground, Tilemap Ice)
+    public Tilemap Ground, Ice , Mud; 
+    public TileMapHandler(Tilemap Ground, Tilemap Ice , TileMap Mud)
     {
         this.Ground = Ground;
         this.Ice = Ice;
+        this.Mud = Mud;
     }
     public TileMapHandler()
     {
@@ -51,6 +52,21 @@ public class TileMapHandler
                     t.x = i;
                     t.y = j;
                     map.iceTiles.Add(t);
+                }
+            }
+        }
+        for (int i = -10; i < size.x - 10; i++)
+        {
+            for (int j = -5; j < size.y - 5; j++)
+            {
+                TileBase tb = Mud.GetTile(new Vector3Int(i, j, 0));
+                if (tb != null)
+                {
+                    Tile t = new Tile();
+                    t.tileName = tb.name;
+                    t.x = i;
+                    t.y = j;
+                    map.mudTiles.Add(t);
                 }
             }
         }
@@ -99,6 +115,7 @@ public class Map  {
     public string mapName;
     public List<Tile> groundTiles = new List<Tile>();
     public List<Tile> iceTiles = new List<Tile>();
+    public List<Tile> mudTiles = new List<Tile>();
 }
 
 public class Tile {
