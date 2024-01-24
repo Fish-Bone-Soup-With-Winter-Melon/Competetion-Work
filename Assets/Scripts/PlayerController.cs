@@ -12,23 +12,23 @@ public class PlayerController : MonoBehaviour
     public UIManager uiManager;
     public PropManager propManager;
 
-    void Move()
-    {
-        // 处理玩家的移动逻辑
-    }
+    // void Move()
+    // {
+    //     // 处理玩家的移动逻辑
+    // }
 
-    void Jump()
-    {
-        // 处理玩家的跳跃逻辑
-    }
+    // void Jump()
+    // {
+    //     // 处理玩家的跳跃逻辑
+    // }
 
-    void Dash()
-    {
-        // 处理玩家的冲刺逻辑
-    }
+    // void Dash()
+    // {
+    //     // 处理玩家的冲刺逻辑
+    // }
 
-    public void CheckCollision()
-    {
-        // 检测玩家与地图元素的碰撞
-    }
+    // public void CheckCollision()
+    // {
+    //     // 检测玩家与地图元素的碰撞
+    // }
 }

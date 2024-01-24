@@ -16,10 +16,10 @@ public class MapManager : MonoBehaviour
         // 更新地图，处理地图滚动和变化
     }
 
-    void CheckCollision()
-    {
-        // 检测玩家与地图元素的碰撞
-        playerController.CheckCollision();
-    }
+    // void CheckCollision()
+    // {
+    //     // 检测玩家与地图元素的碰撞
+    //     // playerController.CheckCollision();
+    // }
 }
 
