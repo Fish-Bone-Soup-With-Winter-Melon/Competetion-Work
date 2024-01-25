@@ -12,15 +12,20 @@ public class PlayerStateRun : PlayerState
     public override void PhysicUpdate()
     {
         //临时性的移动措施
+        
+    }
+    public override void LogicUpdate()
+    {
         if(Input.GetKey(KeyCode.RightArrow))
             stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(5,0);
         else if(Input.GetKey(KeyCode.LeftArrow))
             stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(-5,0);
-    }
-    public override void LogicUpdate()
-    {
+
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             stateMachine.SwitchState(stateMachine.stateIdle);
+            
+        if (Input.GetKeyDown(KeyCode.Space))
+            stateMachine.SwitchState(stateMachine.stateJump);
     }
     public override void Exit()
     {
