@@ -116,6 +116,8 @@ public class Map  {
     public List<Tile> groundTiles = new List<Tile>();
     public List<Tile> iceTiles = new List<Tile>();
     public List<Tile> mudTiles = new List<Tile>();
+    public List<Tile> Boost = new List<Tile>();
+    public List<Tile> Reverse = new List<Tile>();
 }
 
 public class Tile {

@@ -7,7 +7,7 @@ public class PropManager : MonoBehaviour
     public PlayerController playerController;
     public enum PropType
     {
-        SpeedBoost,
+        SpeedBoost,GravityReverse,
         // 添加道具类型
     }
     public void CollectProp(PropType propType)
