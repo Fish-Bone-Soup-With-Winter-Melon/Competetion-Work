@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int player_id;                  //playerµÄÎ¨Ò»±êÊ¶·û£¬±ı£º¶àplayer
-    public GameObject player_obj;   //player¶ÔÓ¦µÄobj or prefeb£¬ÏÂÊöº¯ÊıÓ¦µ±Ö±½Ó²Ù×÷player_objµÄÊôĞÔ
-    float speed;                    //ÉèÖÃ³õÊ¼ËÙ¶È£¨Ö±½Ó¸Ä±äËÙ¶È£ºÄàÌ¶£©
-    float accelerate;               //ÉèÖÃ³õÊ¼¼ÓËÙ¶È£¨Ö±½Ó¸Ä±ä¼ÓËÙ¶È£º±ùÃæ£©
+    int player_id;                  //playerçš„å”¯ä¸€æ ‡è¯†ç¬¦ï¼Œé¥¼ï¼šå¤šplayer
+    public GameObject player_obj;   //playerå¯¹åº”çš„obj or prefebï¼Œä¸‹è¿°å‡½æ•°åº”å½“ç›´æ¥æ“ä½œplayer_objçš„å±æ€§
+    float speed;                    //è®¾ç½®åˆå§‹é€Ÿåº¦ï¼ˆç›´æ¥æ”¹å˜é€Ÿåº¦ï¼šæ³¥æ½­ï¼‰
+    float accelerate;               //è®¾ç½®åˆå§‹åŠ é€Ÿåº¦ï¼ˆç›´æ¥æ”¹å˜åŠ é€Ÿåº¦ï¼šå†°é¢ï¼‰
 
     public UIManager uiManager;
     public PropManager propManager;
+    private LayerMask GroundLayer;
+    private LayerMask IceLayer;
+    private LayerMask MudLayer;
+
+    private bool isGround;
+    private bool isIce;
+    private bool isMud;
 
     // void Move()
     // {
-    //     // ´¦ÀíÍæ¼ÒµÄÒÆ¶¯Âß¼­
+    //     // å¤„ç†ç©å®¶çš„ç§»åŠ¨é€»è¾‘
     // }
 
     // void Jump()
     // {
-    //     // ´¦ÀíÍæ¼ÒµÄÌøÔ¾Âß¼­
+    //     // å¤„ç†ç©å®¶çš„è·³è·ƒé€»è¾‘
     // }
 
     // void Dash()
     // {
-    //     // ´¦ÀíÍæ¼ÒµÄ³å´ÌÂß¼­
+    //     // å¤„ç†ç©å®¶çš„å†²åˆºé€»è¾‘
     // }
 
     // public void CheckCollision()
     // {
-    //     // ¼ì²âÍæ¼ÒÓëµØÍ¼ÔªËØµÄÅö×²
+    //     // æ£€æµ‹ç©å®¶ä¸åœ°å›¾å…ƒç´ çš„ç¢°æ’
     // }
+    public void CheckCollision()
+    {
+        Vector2 player_pos = this.transform.position;
+        isGround = Physics2D.OverLapCircle(player_pos, 0.1f, GroundLayer);         //æ£€æµ‹é€»è¾‘ï¼šä»¥ç‰©ä½“çš„å½“å‰ä½ç½®ä¸ºåœ†å¿ƒï¼Œ0.1fä¸ºåŠå¾„ï¼Œæ£€æµ‹æ˜¯å¦ä¸GroundLayerç›¸äº¤
+        isIce = Physics2D.OverLapCircle(player_pos, 0.1f, IceLayer);              
+        isMud = Physics2D.OverLapCircle(player_pos, 0.1f, MudLayer);
+        // æ£€æµ‹ç©å®¶ä¸åœ°å›¾å…ƒç´ çš„ç¢°æ’
+
+    }
+
 }
