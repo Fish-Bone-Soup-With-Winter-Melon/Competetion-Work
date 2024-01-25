@@ -8,7 +8,8 @@ public class MapManager : MonoBehaviour
 
     public void GenerateMap()
     {
-        // 生成地图，包括平台、障碍物等
+        Manager manager = new Manager();
+        manager.Load();
     }
 
     void UpdateMap()
@@ -16,10 +17,10 @@ public class MapManager : MonoBehaviour
         // 更新地图，处理地图滚动和变化
     }
 
-    void CheckCollision()
-    {
-        // 检测玩家与地图元素的碰撞
-        playerController.CheckCollision();
-    }
+    // void CheckCollision()
+    // {
+    //     // 检测玩家与地图元素的碰撞
+    //     // playerController.CheckCollision();
+    // }
 }
 
