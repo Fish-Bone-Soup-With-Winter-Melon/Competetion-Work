@@ -19,7 +19,7 @@ public class TileMapHandler
     }
     public TileMapHandler()
     {
-
+                                         //TilemapHandler函数的重载
     }
 
     public string MapToJson(string mapName , Vector2Int size)
@@ -70,7 +70,6 @@ public class TileMapHandler
                 }
             }
         }
-
         UnityEngine.TextAsset textAsset = Resources.Load<UnityEngine.TextAsset>("Maps");
         AllMaps allMaps = JsonMapper.ToObject<AllMaps>(textAsset.text);
         Resources.UnloadAsset(textAsset);
@@ -109,20 +108,18 @@ public class TileMapHandler
 
 public class AllMaps {
     public List<Map> Maps = new List<Map>();
-}
+}     
 
 public class Map  {
     public string mapName;
     public List<Tile> groundTiles = new List<Tile>();
     public List<Tile> iceTiles = new List<Tile>();
     public List<Tile> mudTiles = new List<Tile>();
-    public List<Tile> Boost = new List<Tile>();
-    public List<Tile> Reverse = new List<Tile>();
 }
 
 public class Tile {
     public string tileName;
     public int x, y;
-}
+}               //以上的是存储的数据结构
 
 
