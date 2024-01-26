@@ -71,7 +71,7 @@ public class PropManager : MonoBehaviour
                 spriteRenderer.sprite = sprite;
 
                 // 设置位置
-                spriteObject.transform.position = spriteInfo.position;
+                spriteObject.transform.position = spriteInfo.pos;
             }
         }
     }
@@ -79,15 +79,15 @@ public class PropManager : MonoBehaviour
 
 }
 //存储道具信息的数据结构
-private class PropObj
+private class SpriteInfo
 {
     public Vector3 pos;
-    public string type;
+    public string name;
 }
 
-public class DataVO
+public class SpriteData
 {
-    public List<PropObj> listObjs = new List<PropObj>();
+    public SpriteInfo[] sprites;
 }
 
 
