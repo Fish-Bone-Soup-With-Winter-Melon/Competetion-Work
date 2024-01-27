@@ -26,7 +26,7 @@ public class TileMapHandler
     {
         Map map = new Map();
         map.mapName = mapName;
-        for(int i = -10; i < size.x - 10; i++)
+        for(int i = -10; i < size.x - 10; i++)          //根据实际情况更改上下限值
         {
             for(int j = -5; j < size.y - 5; j++)
             {
