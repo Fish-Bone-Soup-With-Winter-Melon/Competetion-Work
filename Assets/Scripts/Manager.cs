@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
+        return;
         TileMapHandler Tilemaphandler = new TileMapHandler();
         Map map = Tilemaphandler.getMapByName("map_0");
         if(map == null)
