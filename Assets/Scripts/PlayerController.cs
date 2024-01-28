@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int player_id;                  //playerµÄÎ¨Ò»±êÊ¶·û£¬±ı£º¶àplayer
-    public GameObject player_obj;   //player¶ÔÓ¦µÄobj or prefeb£¬ÏÂÊöº¯ÊıÓ¦µ±Ö±½Ó²Ù×÷player_objµÄÊôĞÔ
-    float speed;                    //ÉèÖÃ³õÊ¼ËÙ¶È£¨Ö±½Ó¸Ä±äËÙ¶È£ºÄàÌ¶£©
-    float accelerate;               //ÉèÖÃ³õÊ¼¼ÓËÙ¶È£¨Ö±½Ó¸Ä±ä¼ÓËÙ¶È£º±ùÃæ£©
+    int player_id;                  //playerï¿½ï¿½Î¨Ò»ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½player
+    public GameObject player_obj;   //playerï¿½ï¿½Ó¦ï¿½ï¿½obj or prefebï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ö±ï¿½Ó²ï¿½ï¿½ï¿½player_objï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    float speed;                    //ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½Ù¶È£ï¿½Ö±ï¿½Ó¸Ä±ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½
+    float accelerate;               //ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½Ù¶È£ï¿½Ö±ï¿½Ó¸Ä±ï¿½ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½ï¿½æ£©
 
     public UIManager uiManager;
     public PropManager propManager;
@@ -19,30 +19,30 @@ public class PlayerController : MonoBehaviour
     public bool isIce;
     public bool isMud;
 
-    void Move()
-    {
-        // ´¦ÀíÍæ¼ÒµÄÒÆ¶¯Âß¼­
-    }
+    // void Move()
+    // {
+    //     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Æ¶ï¿½ï¿½ß¼ï¿½
+    // }
 
-    void Jump()
-    {
-        // ´¦ÀíÍæ¼ÒµÄÌøÔ¾Âß¼­
-    }
+    // void Jump()
+    // {
+    //     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ô¾ï¿½ß¼ï¿½
+    // }
 
-    void Dash()
-    {
-        // ´¦ÀíÍæ¼ÒµÄ³å´ÌÂß¼­
-    }
+    // void Dash()
+    // {
+    //     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ³ï¿½ï¿½ï¿½ß¼ï¿½
+    // }
 
     public void CheckCollision()
     {
-        CheckIsOnHorizontalGround();         //¼ì²âÂß¼­£ºÒÔÎïÌåµÄµ±Ç°Î»ÖÃÎªÔ²ĞÄ£¬0.1fÎª°ë¾¶£¬¼ì²âÊÇ·ñÓëGroundLayerÏà½»
+        CheckIsOnHorizontalGround();         //ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ç°Î»ï¿½ï¿½ÎªÔ²ï¿½Ä£ï¿½0.1fÎªï¿½ë¾¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½GroundLayerï¿½à½»
         CheckIsOnHorizontalIce();
         CheckIsOnHorizontalMud();
-        // ¼ì²âÍæ¼ÒÓëµØÍ¼ÔªËØµÄÅö×²       //½öÏŞÓÚµØÍ¼ÔªËØ²»°üÀ¨Åö×²µÀ¾ßµÄÇé¿ö
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Ôªï¿½Øµï¿½ï¿½ï¿½×²       //ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Í¼Ôªï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½
     }
 
-    void OnTriggerEnter2D(Collider2D other)        //¼ì²âÍæ¼ÒÓëµÀ¾ßµÄÅö×²
+    void OnTriggerEnter2D(Collider2D other)        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½×²
     {
         if (other.gameObject.CompareTag("SpeedBoost"))
         {
@@ -54,25 +54,25 @@ public class PlayerController : MonoBehaviour
             propManager.CollectProp(PropManager.PropType.GravityReverse);
             Destroy(other.gameObject);
         }
-        // ´¦ÀíÍæ¼ÒÓëµÀ¾ßµÄÅö×²
-    }       //Õâ¸öÀíÂÛÉÏÓ¦¸ÃÃ¿Ö¡¼ì²âÒ»´Î
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½×²
+    }       //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ã¿Ö¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 
 
 
 
 
-    // ÒÔÏÂÎª¼ì²âÍæ¼ÒÓëµØÍ¼ÔªËØµÄÅö×²µÄº¯Êı
+    // ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Ôªï¿½Øµï¿½ï¿½ï¿½×²ï¿½Äºï¿½ï¿½ï¿½
     public RaycastHit2D CreateOffsetRaycast(Vector2 offset, Vector2 diraction, float length, LayerMask layer)
     {
-        // »ñµÃÍæ¼Òµ±Ç°×ø±êÎ»ÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ç°ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         Vector2 playerPosition = transform.position;
-        // Éú³ÉÍæ¼Òµ±Ç°Î»ÖÃË®Æ½Æ«ÒÆµÄÉäÏßÍ¶ÉäÅö×²Æ÷
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ç°Î»ï¿½ï¿½Ë®Æ½Æ«ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½
         RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
-        // Èç¹ûÓÚË®Æ½µØÃæ·¢ÉúÅö×²ÔòÏÔÊ¾ºìÉ«£¬·´Ö®ÔòÏÔÊ¾ÂÌÉ«
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½æ·¢ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«
         Color rayColor = hit ? Color.red : Color.green;
-        // ÔÚSceneÖĞ¶¯Ì¬´òÓ¡Í¶Éä³öµÄ¹âÏß
+        // ï¿½ï¿½Sceneï¿½Ğ¶ï¿½Ì¬ï¿½ï¿½Ó¡Í¶ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½
         Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
-        // ·µ»ØÉú³ÉµÄ¼ì²âÆ÷
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉµÄ¼ï¿½ï¿½ï¿½ï¿½
         return hit;
     }
 
@@ -81,14 +81,14 @@ public class PlayerController : MonoBehaviour
         //TODO:STATE
 
 
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼Ò×ó²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼ÒÓÒ²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
-        // ÅĞ¶Ï×óÓÒË«ÉäÏßÊÇ·ñÓëË®Æ½µØÃæÍ¼²ã·¢ÉúÅö×²
+        // ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ã·¢ï¿½ï¿½ï¿½ï¿½×²
         if (leftCheckRay || rightCheckRay)
         {
-            // ÉèÖÃµØÃæ×´Ì¬Æ÷ÎªÕæ
+            // ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Îªï¿½ï¿½
             isGround = true;
         }
         else
@@ -99,14 +99,14 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalIce()
     {
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼Ò×ó²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼ÒÓÒ²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
-        // ÅĞ¶Ï×óÓÒË«ÉäÏßÊÇ·ñÓëË®Æ½µØÃæÍ¼²ã·¢ÉúÅö×²
+        // ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ã·¢ï¿½ï¿½ï¿½ï¿½×²
         if (leftCheckRay || rightCheckRay)
         {
-            // ÉèÖÃµØÃæ×´Ì¬Æ÷ÎªÕæ
+            // ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Îªï¿½ï¿½
             isIce = true;
         }
         else
@@ -117,14 +117,14 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalMud()
     {
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼Ò×ó²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
-        // µ÷ÓÃ(1)ÖĞ·½·¨£¬Éú³ÉÍæ¼ÒÓÒ²à¼ì²âÉäÏß
+        // ï¿½ï¿½ï¿½ï¿½(1)ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
-        // ÅĞ¶Ï×óÓÒË«ÉäÏßÊÇ·ñÓëË®Æ½µØÃæÍ¼²ã·¢ÉúÅö×²
+        // ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ã·¢ï¿½ï¿½ï¿½ï¿½×²
         if (leftCheckRay || rightCheckRay)
         {
-            // ÉèÖÃµØÃæ×´Ì¬Æ÷ÎªÕæ
+            // ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Îªï¿½ï¿½
             isMud = true;
         }
         else
