@@ -11,7 +11,7 @@ using UnityEngine.TextCore.Text;
 public class TileMapHandler
 {
     public Tilemap Ground, Ice , Mud; 
-    public TileMapHandler(Tilemap Ground, Tilemap Ice , TileMap Mud)
+    public TileMapHandler(Tilemap Ground, Tilemap Ice , Tilemap Mud)
     {
         this.Ground = Ground;
         this.Ice = Ice;

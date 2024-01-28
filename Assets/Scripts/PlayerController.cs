@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
 
     public UIManager uiManager;
     public PropManager propManager;
-    //private LayerMask GroundLayer;
-    //private LayerMask IceLayer;
-    //private LayerMask MudLayer;
+    private LayerMask GroundLayer;
+    private LayerMask IceLayer;
+    private LayerMask MudLayer;
 
-    private bool isGround;
-    private bool isIce;
-    private bool isMud;
+    public bool isGround;
+    public bool isIce;
+    public bool isMud;
 
     void Move()
     {
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     public RaycastHit2D CreateOffsetRaycast(Vector2 offset, Vector2 diraction, float length, LayerMask layer)
     {
         // 获得玩家当前坐标位置
-        Vector2 playerPosition = transfrom.position;
+        Vector2 playerPosition = transform.position;
         // 生成玩家当前位置水平偏移的射线投射碰撞器
         RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
         // 如果于水平地面发生碰撞则显示红色，反之则显示绿色
@@ -76,45 +76,60 @@ public class PlayerController : MonoBehaviour
         return hit;
     }
 
-    public void CheckIsOnHorizontalGround()
+    public void CheckIsOnHorizontalGround(/*int state*/)
     {
+        //TODO:STATE
+
+
         // 调用(1)中方法，生成玩家左侧检测射线
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2 down), 0.51f, GroundLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
         // 调用(1)中方法，生成玩家右侧检测射线
-        RaycasHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2 down), 0.51f, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
         // 判断左右双射线是否与水平地面图层发生碰撞
         if (leftCheckRay || rightCheckRay)
         {
             // 设置地面状态器为真
             isGround = true;
         }
+        else
+        {
+            isGround = false;
+        }
     }
 
     public void CheckIsOnHorizontalIce()
     {
         // 调用(1)中方法，生成玩家左侧检测射线
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2 down), 0.51f, IceLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
         // 调用(1)中方法，生成玩家右侧检测射线
-        RaycasHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2 down), 0.51f, IceLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
         // 判断左右双射线是否与水平地面图层发生碰撞
         if (leftCheckRay || rightCheckRay)
         {
             // 设置地面状态器为真
             isIce = true;
         }
+        else
+        {
+            isIce = false;
+        }
     }
 
     public void CheckIsOnHorizontalMud()
     {
         // 调用(1)中方法，生成玩家左侧检测射线
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2 down), 0.51f, MudLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
         // 调用(1)中方法，生成玩家右侧检测射线
-        RaycasHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2 down), 0.51f, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
         // 判断左右双射线是否与水平地面图层发生碰撞
         if (leftCheckRay || rightCheckRay)
         {
             // 设置地面状态器为真
             isMud = true;
+        }
+        else
+        {
+            isMud = false;
         }
     }
 }

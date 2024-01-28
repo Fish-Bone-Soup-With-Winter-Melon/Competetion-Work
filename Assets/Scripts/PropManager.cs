@@ -89,7 +89,7 @@ public class PropManager : MonoBehaviour
                     pos = obj.transform.position,
                     name = obj.name
                 };
-                sprites.Add(spriteInfos);
+                spriteInfos.Add(info);
             }
         }
         SpriteData spriteData = new SpriteData
