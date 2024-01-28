@@ -8,6 +8,7 @@
 [Pp]rojectSettings/
 [Pp]ackages/
 [Pp]ackageCache/
+[Dd]ebugScenes/
 *.tmproj
 *.csproj
 *.unityproj
