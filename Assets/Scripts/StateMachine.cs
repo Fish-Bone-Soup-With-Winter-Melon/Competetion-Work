@@ -7,11 +7,10 @@ public class StateMachine : MonoBehaviour
 {
     //碰撞检测不知道该写在哪才能生效
     // public bool collisionFlag = false;
-    IState currentState;
-    public PlayerStateIdle playerStateIdle;
-    void Start()
+    protected IState currentState;
+    protected virtual void Start()
     {
-        currentState = playerStateIdle;
+
     }
     void Update()
     {

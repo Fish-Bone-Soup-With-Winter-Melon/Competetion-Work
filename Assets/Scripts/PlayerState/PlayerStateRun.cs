@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Run", fileName = "PlayerState_Run")]
 public class PlayerStateRun : PlayerState
 {
+    public float xSpeed = 5.0f;
     public override void Enter()
     {
         //放动画！
@@ -17,9 +18,9 @@ public class PlayerStateRun : PlayerState
     public override void LogicUpdate()
     {
         if(Input.GetKey(KeyCode.RightArrow))
-            stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(5,0);
+            stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed,0);
         else if(Input.GetKey(KeyCode.LeftArrow))
-            stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(-5,0);
+            stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(-xSpeed,0);
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             stateMachine.SwitchState(stateMachine.stateIdle);
