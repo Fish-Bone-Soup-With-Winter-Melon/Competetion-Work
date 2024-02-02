@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
+        return;
         TileMapHandler Tilemaphandler = new TileMapHandler();
         Map map = Tilemaphandler.getMapByName("map_0");
         if(map == null)
@@ -39,7 +40,7 @@ public class Manager : MonoBehaviour
         foreach (Tile item in map.mudTiles)
         {
             Mud.SetTile(new Vector3Int(item.x, item.y, 0), tiles.Where(i => i.name == item.tileName).FirstOrDefault());
-        }
+        }                   //挨个读取文件中的tile并且放到对应的tilemap中
     }
 
     [ContextMenu("clear")]

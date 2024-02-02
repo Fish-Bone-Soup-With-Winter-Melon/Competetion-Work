@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    IState currentState;
-    public PlayerStateIdle playerStateIdle;
-    void Start()
+    //碰撞检测不知道该写在哪才能生效
+    // public bool collisionFlag = false;
+    protected IState currentState;
+    protected virtual void Start()
     {
-        currentState = playerStateIdle;
+
     }
     void Update()
     {
@@ -29,4 +30,12 @@ public class StateMachine : MonoBehaviour
         currentState.Exit();
         SwitchOn(newState);
     }
+    // void OnCollisionEnter()
+    // {
+    //     collisionFlag = true;
+    // }
+    // void OnCollisionExit()
+    // {
+    //     collisionFlag = false;
+    // }
 }
