@@ -8,11 +8,12 @@ public class PlayerState : ScriptableObject, IState
     
     protected PlayerStateMachine stateMachine;
     
-    
-    public void Initialize(Animator animator, PlayerStateMachine stateMachine)
+    protected Rigidbody2D rigidbody2D;
+    public void Initialize(Animator animator, PlayerStateMachine stateMachine,Rigidbody2D rigidbody2D)
     {
         this.animator = animator;
         this.stateMachine = stateMachine;
+        this.rigidbody2D = rigidbody2D;
     }
     public virtual void Enter()
     {

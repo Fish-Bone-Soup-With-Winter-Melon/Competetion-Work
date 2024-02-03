@@ -8,6 +8,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateIdle stateIdle;
     public PlayerStateRun stateRun;
     public PlayerStateJump stateJump;
+    public PlayerStateDash stateDash;
     Animator animator;
     public GameObject plyaerObject;
     public Rigidbody2D playerRigidbody;
@@ -21,8 +22,9 @@ public class PlayerStateMachine : StateMachine
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        stateIdle.Initialize(animator,this);
-        stateRun.Initialize(animator,this);
-        stateJump.Initialize(animator,this);
+        stateIdle.Initialize(animator,this,playerRigidbody);
+        stateRun.Initialize(animator,this,playerRigidbody);
+        stateJump.Initialize(animator,this,playerRigidbody);
+        stateDash.Initialize(animator,this,playerRigidbody);
     }
 }
