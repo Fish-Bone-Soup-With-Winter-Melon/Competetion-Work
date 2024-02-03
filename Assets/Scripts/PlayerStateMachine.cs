@@ -7,15 +7,22 @@ public class PlayerStateMachine : StateMachine
 {
     public PlayerStateIdle stateIdle;
     public PlayerStateRun stateRun;
+    public PlayerStateJump stateJump;
     Animator animator;
-    public new GameObject gameObject;
-    public new Rigidbody2D rigidbody;
+    public GameObject plyaerObject;
+    public Rigidbody2D playerRigidbody;
+
+    protected override void Start()
+    {
+        currentState = stateIdle;
+    }
     //在这里设置角色初始数据
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         stateIdle.Initialize(animator,this);
         stateRun.Initialize(animator,this);
+        stateJump.Initialize(animator,this);
     }
 }

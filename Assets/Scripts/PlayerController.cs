@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int player_id;                  //player的唯一标识符，饼：多player
-    public GameObject player_obj;   //player对应的obj or prefeb，下述函数应当直接操作player_obj的属性
-    float speed;                    //设置初始速度（直接改变速度：泥潭）
-    float accelerate;               //设置初始加速度（直接改变加速度：冰面）
+    int player_id;                  //player��Ψһ��ʶ����������player
+    public GameObject player_obj;   //player��Ӧ��obj or prefeb����������Ӧ��ֱ�Ӳ���player_obj������
+    float speed;                    //���ó�ʼ�ٶȣ�ֱ�Ӹı��ٶȣ���̶��
+    float accelerate;               //���ó�ʼ���ٶȣ�ֱ�Ӹı���ٶȣ����棩
 
     public UIManager uiManager;
     public PropManager propManager;
@@ -15,37 +15,121 @@ public class PlayerController : MonoBehaviour
     private LayerMask IceLayer;
     private LayerMask MudLayer;
 
-    private bool isGround;
-    private bool isIce;
-    private bool isMud;
+    public bool isGround;
+    public bool isIce;
+    public bool isMud;
 
     // void Move()
     // {
-    //     // 处理玩家的移动逻辑
+    //     // ������ҵ��ƶ��߼�
     // }
 
     // void Jump()
     // {
-    //     // 处理玩家的跳跃逻辑
+    //     // ������ҵ���Ծ�߼�
     // }
 
     // void Dash()
     // {
-    //     // 处理玩家的冲刺逻辑
+    //     // ������ҵĳ���߼�
     // }
 
-    // public void CheckCollision()
-    // {
-    //     // 检测玩家与地图元素的碰撞
-    // }
     public void CheckCollision()
     {
-        Vector2 player_pos = this.transform.position;
-        isGround = Physics2D.OverlapCircle(player_pos, 0.1f, GroundLayer);         //检测逻辑：以物体的当前位置为圆心，0.1f为半径，检测是否与GroundLayer相交
-        isIce = Physics2D.OverlapCircle(player_pos, 0.1f, IceLayer);              
-        isMud = Physics2D.OverlapCircle(player_pos, 0.1f, MudLayer);
-        // 检测玩家与地图元素的碰撞
-
+        CheckIsOnHorizontalGround();         //����߼���������ĵ�ǰλ��ΪԲ�ģ�0.1fΪ�뾶������Ƿ���GroundLayer�ཻ
+        CheckIsOnHorizontalIce();
+        CheckIsOnHorizontalMud();
+        // ���������ͼԪ�ص���ײ       //�����ڵ�ͼԪ�ز�������ײ���ߵ����
     }
 
+    void OnTriggerEnter2D(Collider2D other)        //����������ߵ���ײ
+    {
+        if (other.gameObject.CompareTag("SpeedBoost"))
+        {
+            propManager.CollectProp(PropManager.PropType.SpeedBoost);
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("GravityReverse"))
+        {
+            propManager.CollectProp(PropManager.PropType.GravityReverse);
+            Destroy(other.gameObject);
+        }
+        // �����������ߵ���ײ
+    }       //���������Ӧ��ÿ֡���һ��
+
+
+
+
+
+    // ����Ϊ���������ͼԪ�ص���ײ�ĺ���
+    public RaycastHit2D CreateOffsetRaycast(Vector2 offset, Vector2 diraction, float length, LayerMask layer)
+    {
+        // �����ҵ�ǰ����λ��
+        Vector2 playerPosition = transform.position;
+        // ������ҵ�ǰλ��ˮƽƫ�Ƶ�����Ͷ����ײ��
+        RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
+        // �����ˮƽ���淢����ײ����ʾ��ɫ����֮����ʾ��ɫ
+        Color rayColor = hit ? Color.red : Color.green;
+        // ��Scene�ж�̬��ӡͶ����Ĺ���
+        Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
+        // �������ɵļ����
+        return hit;
+    }
+
+    public void CheckIsOnHorizontalGround(/*int state*/)
+    {
+        //TODO:STATE
+
+
+        // ����(1)�з���������������������
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
+        // ����(1)�з�������������Ҳ�������
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
+        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        if (leftCheckRay || rightCheckRay)
+        {
+            // ���õ���״̬��Ϊ��
+            isGround = true;
+        }
+        else
+        {
+            isGround = false;
+        }
+    }
+
+    public void CheckIsOnHorizontalIce()
+    {
+        // ����(1)�з���������������������
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
+        // ����(1)�з�������������Ҳ�������
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
+        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        if (leftCheckRay || rightCheckRay)
+        {
+            // ���õ���״̬��Ϊ��
+            isIce = true;
+        }
+        else
+        {
+            isIce = false;
+        }
+    }
+
+    public void CheckIsOnHorizontalMud()
+    {
+        // ����(1)�з���������������������
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
+        // ����(1)�з�������������Ҳ�������
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
+        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        if (leftCheckRay || rightCheckRay)
+        {
+            // ���õ���״̬��Ϊ��
+            isMud = true;
+        }
+        else
+        {
+            isMud = false;
+        }
+    }
 }
