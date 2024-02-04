@@ -20,22 +20,26 @@ public class PlayerStateInAir : PlayerState
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(-xSpeed,0);
-            rigidbody2D.velocity += new Vector2(-xSpeed,0);
+            rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y);
         }
         else if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(xSpeed,0);
-            rigidbody2D.velocity += new Vector2(xSpeed,0);
+            rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow))
+        // if(Input.GetKeyUp(KeyCode.RightArrow))
+        // {
+        //     // stateMachine.GetComponent<Rigidbody2D>().velocity -= new Vector2(xSpeed,0);
+        //     rigidbody2D.velocity = new Vector2(xSpeed,0);
+        // }
+        // else if(Input.GetKeyUp(KeyCode.LeftArrow))
+        // {
+        //     // stateMachine.GetComponent<Rigidbody2D>().velocity -= new Vector2(-xSpeed,0);
+        //     rigidbody2D.velocity = new Vector2(-xSpeed,0);
+        // }
+        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            // stateMachine.GetComponent<Rigidbody2D>().velocity -= new Vector2(xSpeed,0);
-            rigidbody2D.velocity -= new Vector2(xSpeed,0);
-        }
-        else if(Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            // stateMachine.GetComponent<Rigidbody2D>().velocity -= new Vector2(-xSpeed,0);
-            rigidbody2D.velocity -= new Vector2(-xSpeed,0);
+            rigidbody2D.velocity = new Vector2(0,rigidbody2D.velocity.y);
         }
         if(rigidbody2D.velocity.y == 0)//临时使用 y 轴速度检测来退出跳跃状态，这是有 bug（空中 y 轴速度容易为 0 ）的
             stateMachine.SwitchState(stateMachine.stateIdle);

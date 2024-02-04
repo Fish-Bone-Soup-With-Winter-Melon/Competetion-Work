@@ -82,9 +82,11 @@ public class PlayerController : MonoBehaviour
 
 
         // ����(1)�з���������������������
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.2f, GroundLayer);
         // ����(1)�з�������������Ҳ�������
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.2f, GroundLayer);
+        Debug.DrawRay(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f),Color.red ,1f);
+        Debug.DrawRay(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f),Color.red ,1f);
         // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
         if (leftCheckRay || rightCheckRay)
         {
