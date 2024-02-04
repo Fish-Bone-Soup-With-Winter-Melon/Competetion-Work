@@ -9,9 +9,11 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateRun stateRun;
     public PlayerStateJump stateJump;
     public PlayerStateDash stateDash;
+    public PlayerStateInAir stateInAir;
     Animator animator;
     public GameObject plyaerObject;
     public Rigidbody2D playerRigidbody;
+    public PlayerController playerController;
 
     protected override void Start()
     {
@@ -22,9 +24,11 @@ public class PlayerStateMachine : StateMachine
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        stateIdle.Initialize(animator,this,playerRigidbody);
-        stateRun.Initialize(animator,this,playerRigidbody);
-        stateJump.Initialize(animator,this,playerRigidbody);
-        stateDash.Initialize(animator,this,playerRigidbody);
+        playerController = GetComponent<PlayerController>();
+        stateIdle.Initialize(animator,this,playerRigidbody,playerController);
+        stateRun.Initialize(animator,this,playerRigidbody,playerController);
+        stateJump.Initialize(animator,this,playerRigidbody,playerController);
+        stateDash.Initialize(animator,this,playerRigidbody,playerController);
+        stateInAir.Initialize(animator,this,playerRigidbody,playerController);
     }
 }
