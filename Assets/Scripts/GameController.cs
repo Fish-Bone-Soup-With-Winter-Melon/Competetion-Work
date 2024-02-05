@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
     {
         // 游戏进行中调用，50ms一次
         playerController.CheckCollision();
-        Debug.Log(playerController.isGround);
+        // Debug.Log(playerController.isGround);
         // !!! 为防止出现时序问题，所有其他文件中涉及到随时更新的函数调用必须在本窗口进行。
     }
 }

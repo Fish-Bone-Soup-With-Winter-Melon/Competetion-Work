@@ -17,7 +17,7 @@ public class PlayerStateMachine : StateMachine
 
     protected override void Start()
     {
-        currentState = stateIdle;
+        currentState = stateInAir;
     }
     //在这里设置角色初始数据
     void Awake()

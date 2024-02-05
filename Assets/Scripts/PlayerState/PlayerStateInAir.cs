@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/InAir", fileName = "PlayerState_InAir")]
 public class PlayerStateInAir : PlayerState
@@ -17,12 +18,12 @@ public class PlayerStateInAir : PlayerState
         // 暂时不这样检测，等待碰撞检测的完善
         // if(playerController.isMud || playerController.isGround || playerController.isIce)
         //     stateMachine.SwitchState(stateMachine.stateIdle);
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(-xSpeed,0);
             rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y);
         }
-        else if(Input.GetKeyDown(KeyCode.RightArrow))
+        else if(Input.GetKey(KeyCode.RightArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(xSpeed,0);
             rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y);
