@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Idle", fileName = "PlayerState_Idle")]
 public class PlayerStateIdle : PlayerState
 {
-    
     public override void Enter()
     {
-        stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        rigidbody2D.velocity = new Vector2(0,0);
     }
     
     public override void LogicUpdate()
@@ -17,6 +17,8 @@ public class PlayerStateIdle : PlayerState
             stateMachine.SwitchState(stateMachine.stateRun);
         if (Input.GetKeyDown(KeyCode.Space))
             stateMachine.SwitchState(stateMachine.stateJump);
+        if (Input.GetKeyDown(KeyCode.D))
+            stateMachine.SwitchState(stateMachine.stateDash);
     }
     public override void PhysicUpdate()
     {

@@ -11,11 +11,11 @@ public class PlayerController : MonoBehaviour
 
     public UIManager uiManager;
     public PropManager propManager;
-    private LayerMask GroundLayer;
-    private LayerMask IceLayer;
-    private LayerMask MudLayer;
+    public LayerMask GroundLayer;
+    public LayerMask IceLayer;
+    public LayerMask MudLayer;
 
-    public bool isGround;
+    public bool isGround = false;
     public bool isIce;
     public bool isMud;
 
