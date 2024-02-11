@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public bool isIce;
     public bool isMud;
+    public float rayLength = 0.51f;
 
     // void Move()
     // {
@@ -74,8 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         //TODO:STATE
 
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, GroundLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, GroundLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isGround = true;
@@ -88,8 +89,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalIce()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, IceLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, 0.6f, IceLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, IceLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, IceLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isIce = true;
@@ -102,8 +103,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalMud()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, MudLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, MudLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
         if (leftCheckRay || rightCheckRay)
         {
             // ���õ���״̬��Ϊ��
@@ -118,5 +119,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckCollision();
+        Debug.Log(isGround);
     }
 }

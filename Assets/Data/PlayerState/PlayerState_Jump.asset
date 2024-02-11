@@ -1,4 +1,4 @@
---%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
@@ -10,5 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f6ba050ce3dac439224d3adbffe10c, type: 3}
-  m_Name: PlayerStateJump
+  m_Name: PlayerState_Jump
   m_EditorClassIdentifier: 
+  xSpeed: 5
+  ySpeed: 5
+  velocity: {x: 0, y: 0}
