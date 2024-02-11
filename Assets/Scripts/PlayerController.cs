@@ -14,9 +14,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask GroundLayer;
     public LayerMask IceLayer;
     public LayerMask MudLayer;
-    private RaycastHit2D leftCheckRay;
-    private RaycastHit2D rightCheckRay;
-    public bool isGround = false;
+
+    public bool isGround;
     public bool isIce;
     public bool isMud;
 
@@ -62,18 +61,12 @@ public class PlayerController : MonoBehaviour
 
 
 
-    // ����Ϊ���������ͼԪ�ص���ײ�ĺ���
     public RaycastHit2D CreateOffsetRaycast(Vector2 offset, Vector2 diraction, float length, LayerMask layer)
     {
-        // �����ҵ�ǰ����λ��
         Vector2 playerPosition = transform.position;
-        // ������ҵ�ǰλ��ˮƽƫ�Ƶ�����Ͷ����ײ��
         RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
-        // �����ˮƽ���淢����ײ����ʾ��ɫ����֮����ʾ��ɫ
         Color rayColor = hit ? Color.red : Color.green;
-        // ��Scene�ж�̬��ӡͶ����Ĺ���
         Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
-        // �������ɵļ����
         return hit;
     }
 
@@ -81,17 +74,10 @@ public class PlayerController : MonoBehaviour
     {
         //TODO:STATE
 
-
-        // ����(1)�з���������������������
-        leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.2f, GroundLayer);
-        // ����(1)�з�������������Ҳ�������
-        rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.2f, GroundLayer);
-        Debug.DrawRay(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f),Color.red );
-        Debug.DrawRay(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f),Color.red );
-        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, GroundLayer);
         if (leftCheckRay || rightCheckRay)
         {
-            // ���õ���״̬��Ϊ��
             isGround = true;
         }
         else
@@ -102,14 +88,10 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalIce()
     {
-        // ����(1)�з���������������������
-        leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
-        // ����(1)�з�������������Ҳ�������
-        rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, IceLayer);
-        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, IceLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, 0.6f, IceLayer);
         if (leftCheckRay || rightCheckRay)
         {
-            // ���õ���״̬��Ϊ��
             isIce = true;
         }
         else
@@ -120,11 +102,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalMud()
     {
-        // ����(1)�з���������������������
-        leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
-        // ����(1)�з�������������Ҳ�������
-        rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), new Vector2(-1f, 0.0f), 0.51f, MudLayer);
-        // �ж�����˫�����Ƿ���ˮƽ����ͼ�㷢����ײ
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, MudLayer);
         if (leftCheckRay || rightCheckRay)
         {
             // ���õ���״̬��Ϊ��
@@ -134,5 +113,10 @@ public class PlayerController : MonoBehaviour
         {
             isMud = false;
         }
+    }
+
+    void Update()
+    {
+        CheckCollision();
     }
 }
