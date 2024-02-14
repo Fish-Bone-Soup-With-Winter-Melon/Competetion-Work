@@ -52,6 +52,7 @@ public class PropManager : MonoBehaviour
         }
     }
 
+    // 通过名称加载道具的贴图
     private Sprite GetSpriteByName(string name)
     {
         return Resources.Load<Sprite>("props/" + name);//默认道具贴图文件存储在Resouces/props文件夹下

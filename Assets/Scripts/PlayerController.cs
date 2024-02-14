@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int player_id;                  //player��Ψһ��ʶ����������player
-    public GameObject player_obj;   //player��Ӧ��obj or prefeb����������Ӧ��ֱ�Ӳ���player_obj������
-    float speed;                    //���ó�ʼ�ٶȣ�ֱ�Ӹı��ٶȣ���̶��
-    float accelerate;               //���ó�ʼ���ٶȣ�ֱ�Ӹı���ٶȣ����棩
+    int player_id;                  
+    public GameObject player_obj;   
+    float speed;                    
+    float accelerate;               
 
     public UIManager uiManager;
     public PropManager propManager;
@@ -21,28 +21,27 @@ public class PlayerController : MonoBehaviour
 
     // void Move()
     // {
-    //     // ������ҵ��ƶ��߼�
+    //     
     // }
 
     // void Jump()
     // {
-    //     // ������ҵ���Ծ�߼�
+    //     
     // }
 
     // void Dash()
     // {
-    //     // ������ҵĳ���߼�
+    //    
     // }
 
     public void CheckCollision()
     {
-        CheckIsOnHorizontalGround();         //����߼���������ĵ�ǰλ��ΪԲ�ģ�0.1fΪ�뾶������Ƿ���GroundLayer�ཻ
+        CheckIsOnHorizontalGround();       
         CheckIsOnHorizontalIce();
         CheckIsOnHorizontalMud();
-        // ���������ͼԪ�ص���ײ       //�����ڵ�ͼԪ�ز�������ײ���ߵ����
     }
 
-    void OnTriggerEnter2D(Collider2D other)        //����������ߵ���ײ
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("SpeedBoost"))
         {
@@ -54,8 +53,7 @@ public class PlayerController : MonoBehaviour
             propManager.CollectProp(PropManager.PropType.GravityReverse);
             Destroy(other.gameObject);
         }
-        // �����������ߵ���ײ
-    }       //���������Ӧ��ÿ֡���һ��
+    }
 
 
 
@@ -106,7 +104,6 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, 0.6f, MudLayer);
         if (leftCheckRay || rightCheckRay)
         {
-            // ���õ���״̬��Ϊ��
             isMud = true;
         }
         else
