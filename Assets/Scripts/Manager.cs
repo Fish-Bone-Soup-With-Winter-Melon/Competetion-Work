@@ -49,5 +49,32 @@ public class Manager : MonoBehaviour
         Ground.ClearAllTiles();
         Ice.ClearAllTiles();
         Mud.ClearAllTiles();
+        foreach (GameObject obj in GameObject.FindObjectsOfType(typeof(GameObject)))
+        {
+            int x = LayerMask.NameToLayer("Prop");
+            if (obj.layer == x)
+            {
+                GameObject.Destroy(obj);
+            }
+            
+        }
+    }
+
+    [ContextMenu("saveprops")]
+
+    public void test3()
+    {
+        PropManager propManager = new PropManager();
+        propManager.SaveProp();
+    }
+
+    [ContextMenu("loadprops")]
+
+    public void test4()
+    {
+        PropManager propManager = new PropManager();
+        propManager.SpawnProps();
     }
 }
+
+
