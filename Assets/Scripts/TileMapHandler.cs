@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 using LitJson;
 using UnityEngine.TextCore.Text;
+using System.Text;
 
 public class TileMapHandler
 {
@@ -26,9 +27,9 @@ public class TileMapHandler
     {
         Map map = new Map();
         map.mapName = mapName;
-        for(int i = -10; i < size.x - 10; i++)
+        for(int i = -14; i < size.x -14; i++)
         {
-            for(int j = -5; j < size.y - 5; j++)
+            for(int j = -8; j < size.y -8; j++)
             {
                 TileBase tb = Ground.GetTile(new Vector3Int(i, j, 0));
                 if(tb != null){
@@ -40,9 +41,9 @@ public class TileMapHandler
                 }
             }
         }
-        for (int i = -10; i < size.x - 10; i++)
+        for (int i = -14; i < size.x -14; i++)
         {
-            for (int j = -5; j < size.y - 5; j++)
+            for (int j = -8; j < size.y -8; j++)
             {
                 TileBase tb = Ice.GetTile(new Vector3Int(i, j, 0));
                 if (tb != null)
@@ -55,9 +56,9 @@ public class TileMapHandler
                 }
             }
         }
-        for (int i = -10; i < size.x - 10; i++)
+        for (int i = -14; i < size.x -14; i++)
         {
-            for (int j = -5; j < size.y - 5; j++)
+            for (int j = -8; j < size.y -8; j++)
             {
                 TileBase tb = Mud.GetTile(new Vector3Int(i, j, 0));
                 if (tb != null)
@@ -87,9 +88,14 @@ public class TileMapHandler
             }
         }
         allMaps.Maps.Add(map);
-        string json = JsonMapper.ToJson(allMaps);
-        File.WriteAllText(Application.dataPath+"/Resources/Maps.json", json);
-        return json;
+
+        StringBuilder sb = new StringBuilder();
+        JsonWriter jr = new JsonWriter(sb);
+        jr.PrettyPrint = true;//设置为格式化模式，LitJson称其为PrettyPrint（美观的打印），在 Newtonsoft.Json里面则是 Formatting.Indented（锯齿状格式）
+        jr.IndentValue = 4;//缩进空格个数
+        JsonMapper.ToJson(allMaps, jr);
+        File.WriteAllText(Application.dataPath+"/Resources/Maps.json", sb.ToString());
+        return sb.ToString();
     }
     public Map getMapByName(string mapName) {
 

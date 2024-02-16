@@ -14,14 +14,13 @@ public class Manager : MonoBehaviour
     public void test()
     {
         TileMapHandler Tilemaphandler = new TileMapHandler(Ground , Ice , Mud);
-        Tilemaphandler.MapToJson("map_0", new Vector2Int(20 , 11));
+        Tilemaphandler.MapToJson("map_0", new Vector2Int(28 , 16));
 
     }
-
     [ContextMenu("Load")]
     public void Load()
     {
-        return;
+        Debug.Log("Load");
         TileMapHandler Tilemaphandler = new TileMapHandler();
         Map map = Tilemaphandler.getMapByName("map_0");
         if(map == null)
@@ -50,5 +49,32 @@ public class Manager : MonoBehaviour
         Ground.ClearAllTiles();
         Ice.ClearAllTiles();
         Mud.ClearAllTiles();
+        foreach (GameObject obj in GameObject.FindObjectsOfType(typeof(GameObject)))
+        {
+            int x = LayerMask.NameToLayer("Prop");
+            if (obj.layer == x)
+            {
+                GameObject.Destroy(obj);
+            }
+            
+        }
+    }
+
+    [ContextMenu("saveprops")]
+
+    public void test3()
+    {
+        PropManager propManager = new PropManager();
+        propManager.SaveProp();
+    }
+
+    [ContextMenu("loadprops")]
+
+    public void test4()
+    {
+        PropManager propManager = new PropManager();
+        propManager.SpawnProps();
     }
 }
+
+
