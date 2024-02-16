@@ -116,6 +116,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckCollision();
-        Debug.Log(isGround);
+        // Debug.Log(isGround);
     }
 }

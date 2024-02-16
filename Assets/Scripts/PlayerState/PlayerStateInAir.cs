@@ -10,7 +10,7 @@ public class PlayerStateInAir : PlayerState
     public float ySpeed = 5.0f;
     public override void Enter()
     {
-
+        Debug.Log("InAir");
     }
     
     public override void LogicUpdate()
