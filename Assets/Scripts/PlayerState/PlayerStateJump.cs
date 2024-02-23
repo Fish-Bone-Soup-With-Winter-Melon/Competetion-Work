@@ -24,7 +24,7 @@ public class PlayerStateJump : PlayerState
         time += Time.deltaTime;
         Debug.Log(time);
         if(time >= timeLimit)
-            stateMachine.SwitchState(stateMachine.stateInAir);
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
     }
     public override void PhysicUpdate()
     {

@@ -26,12 +26,12 @@ public class PlayerStateRun : PlayerState
             rigidbody2D.velocity = new Vector2(-xSpeed,0);
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-            stateMachine.SwitchState(stateMachine.stateIdle);
+            stateMachine.SwitchState(typeof(PlayerStateIdle));
             
         if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.SwitchState(stateMachine.stateJump);
+            stateMachine.SwitchState(typeof(PlayerStateJump));
         if (Input.GetKeyDown(KeyCode.D))
-            stateMachine.SwitchState(stateMachine.stateDash);
+            stateMachine.SwitchState(typeof(PlayerStateDash));
     }
     public override void Exit()
     {

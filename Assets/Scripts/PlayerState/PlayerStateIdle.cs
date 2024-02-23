@@ -15,11 +15,11 @@ public class PlayerStateIdle : PlayerState
     public override void LogicUpdate()
     {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
-            stateMachine.SwitchState(stateMachine.stateRun);
+            stateMachine.SwitchState(typeof(PlayerStateRun));
         if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.SwitchState(stateMachine.stateJump);
+            stateMachine.SwitchState(typeof(PlayerStateRun));
         if (Input.GetKeyDown(KeyCode.D))
-            stateMachine.SwitchState(stateMachine.stateDash);
+            stateMachine.SwitchState(typeof(PlayerStateRun));
     }
     public override void PhysicUpdate()
     {

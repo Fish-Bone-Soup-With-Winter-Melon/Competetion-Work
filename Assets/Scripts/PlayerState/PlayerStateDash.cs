@@ -88,14 +88,16 @@ public class PlayerStateDash : PlayerState
         }
         if ((direction == Direction.Left || direction == Direction.Right) && rigidbody2D.velocity.x == 0)
         {
-            stateMachine.SwitchState(stateMachine.stateInAir);
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
         }
         else if ((direction == Direction.Up || direction == Direction.Down) && rigidbody2D.velocity.y == 0)
         {
-            stateMachine.SwitchState(stateMachine.stateInAir);
+            // stateMachine.SwitchState(stateMachine.stateInAir);
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
         }
         if (timer >= dashTimeLimit)
-            stateMachine.SwitchState(stateMachine.stateInAir);
+            // stateMachine.SwitchState(stateMachine.stateInAir);
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
     }
     public override void Exit()
     {

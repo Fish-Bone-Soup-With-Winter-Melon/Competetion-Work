@@ -42,10 +42,10 @@ public class PlayerStateInAir : PlayerState
         {
             rigidbody2D.velocity = new Vector2(0,rigidbody2D.velocity.y);
         }
-        if(playerController.isGround == true)//临时使用 y 轴速度检测来退出跳跃状态，这是有 bug（空中 y 轴速度容易为 0 ）的
-            stateMachine.SwitchState(stateMachine.stateIdle);
+        if(playerController.isGround == true)
+            stateMachine.SwitchState(typeof(PlayerStateIdle));
         if (Input.GetKeyDown(KeyCode.D))
-            stateMachine.SwitchState(stateMachine.stateDash);
+            stateMachine.SwitchState(typeof(PlayerStateDash));
     }
     public override void PhysicUpdate()
     {
