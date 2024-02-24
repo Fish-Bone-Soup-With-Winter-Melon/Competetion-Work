@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public bool isIce;
     public bool isMud;
-    public float rayLength = 0.51f;
+    float rayLength = 0.6f;
 
     // void Move()
     // {
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         //TODO:STATE
 
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isGround = true;
@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             isGround = false;
         }
+        Debug.Log(isGround);
     }
 
     public void CheckIsOnHorizontalIce()
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
     public void CheckIsOnHorizontalMud()
     {
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isMud = true;

@@ -12,6 +12,7 @@ public class PlayerState : ScriptableObject, IState
     protected PlayerController playerController;
     public void Initialize(Animator animator, PlayerStateMachine stateMachine,Rigidbody2D rigidbody2D,PlayerController playerController)
     {
+        Debug.Log(playerController);
         this.animator = animator;
         this.stateMachine = stateMachine;
         this.rigidbody2D = rigidbody2D;
