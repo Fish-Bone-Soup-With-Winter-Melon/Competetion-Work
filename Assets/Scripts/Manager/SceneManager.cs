@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    void LoadScene()
+    public void LoadScene()
     {
         // 负责加载场景
     }

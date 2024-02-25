@@ -10,7 +10,7 @@ public class SceneController : MonoBehaviour
     public void LoadScene()
     {
         Debug.Log("pointer:" + pointer);
-        SceneManager.LoadScene(SceneList[pointer]);
+        // SceneManager.LoadScene(SceneList[pointer]);
     }
 
     void ReloadScene()
