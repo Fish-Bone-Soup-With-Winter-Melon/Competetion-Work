@@ -13,6 +13,7 @@ public class PlayerStateMachine : StateMachine
     // public PlayerStateDash stateDash;
     // public PlayerStateInAir stateInAir;
     [SerializeField] PlayerState[] states;
+    public PlayerValues playerValues;
     Animator animator;
     public GameObject plyaerObject;
     public Rigidbody2D playerRigidbody;

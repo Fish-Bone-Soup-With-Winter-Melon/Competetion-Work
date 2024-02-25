@@ -8,8 +8,8 @@ public class MapManager : MonoBehaviour
 
     public void GenerateMap()
     {
-        Manager manager = new Manager();
-        manager.Load();
+        TilemapManager tilemapManager = new TilemapManager();
+        tilemapManager.Load();
     }
 
     void UpdateMap()
