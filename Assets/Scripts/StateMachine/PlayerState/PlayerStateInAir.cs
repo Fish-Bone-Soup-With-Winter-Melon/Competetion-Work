@@ -42,6 +42,7 @@ public class PlayerStateInAir : PlayerState
         {
             rigidbody2D.velocity = new Vector2(0,rigidbody2D.velocity.y);
         }
+        Debug.Log(playerController.isGround);
         if(playerController.isGround == true)
             stateMachine.SwitchState(typeof(PlayerStateIdle));
         if (Input.GetKeyDown(KeyCode.D))

@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
-    // public PlayerStateIdle stateIdle;
-    // public PlayerStateRun stateRun;
-    // public PlayerStateJump stateJump;
-    // public PlayerStateDash stateDash;
-    // public PlayerStateInAir stateInAir;
+    //public PlayerStateIdle stateIdle;
+    //public PlayerStateRun stateRun;
+    //public PlayerStateJump stateJump;
+    //public PlayerStateDash stateDash;
+    //public PlayerStateInAir stateInAir;
     [SerializeField] PlayerState[] states;
     public PlayerValues playerValues;
     Animator animator;
