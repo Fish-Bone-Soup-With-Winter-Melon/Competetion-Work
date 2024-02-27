@@ -2,19 +2,22 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Media;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Manager : MonoBehaviour
+public class TilemapManager : MonoBehaviour
 {
-    public Tilemap Ground, Ice , Mud;
+    //Tilemap
+    public Tilemap Ground, Ice, Mud;
     public List<TileBase> tiles = new List<TileBase>();
+    public PlayerValues aPlayer, bPlayer, cPlayer;
     [ContextMenu("save")]
 
     public void test()
     {
-        TileMapHandler Tilemaphandler = new TileMapHandler(Ground , Ice , Mud);
-        Tilemaphandler.MapToJson("map_0", new Vector2Int(28 , 16));
+        TileMapHandler Tilemaphandler = new TileMapHandler(Ground, Ice, Mud);
+        Tilemaphandler.MapToJson("map_0", new Vector2Int(28, 16));
 
     }
     [ContextMenu("Load")]
@@ -23,14 +26,14 @@ public class Manager : MonoBehaviour
         Debug.Log("Load");
         TileMapHandler Tilemaphandler = new TileMapHandler();
         Map map = Tilemaphandler.getMapByName("map_0");
-        if(map == null)
+        if (map == null)
         {
             Debug.Log("¶ÁÈ¡ÎÄ¼þÊ§°Ü");
             return;
         }
         foreach (Tile item in map.groundTiles)
         {
-            Ground.SetTile(new Vector3Int(item.x, item.y, 0) ,tiles.Where(i => i.name == item.tileName).FirstOrDefault());
+            Ground.SetTile(new Vector3Int(item.x, item.y, 0), tiles.Where(i => i.name == item.tileName).FirstOrDefault());
         }
         foreach (Tile item in map.iceTiles)
         {
@@ -56,7 +59,7 @@ public class Manager : MonoBehaviour
             {
                 GameObject.Destroy(obj);
             }
-            
+
         }
     }
 
@@ -75,6 +78,7 @@ public class Manager : MonoBehaviour
         PropManager propManager = new PropManager();
         propManager.SpawnProps();
     }
+    
 }
 
 

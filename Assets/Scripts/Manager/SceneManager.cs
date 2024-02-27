@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
-    string[] SceneList = { "init","DebugScenes/1" };
-    int pointer = 1;
     public void LoadScene()
     {
-        Debug.Log("pointer:" + pointer);
-        // SceneManager.LoadScene(SceneList[pointer]);
+        // 负责加载场景
     }
 
     void ReloadScene()
