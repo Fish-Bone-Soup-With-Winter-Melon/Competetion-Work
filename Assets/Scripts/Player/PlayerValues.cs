@@ -8,68 +8,40 @@ using LitJson;
 using System.Text;
 using System.IO;
 
-public class PlayerValues
+public class PlayerValues : Values
 {
     public string playerName;
     public bool isPlayerCreated = false;
-    public Vector2 velocity = new Vector2(0, 0);
-    public Vector2 coordinate;// 坐标
-    public IState currentState;
     public bool isJumpBoosted = false;
     public float jumpBoostedTime = 0.0f;
+
+    public PlayerValues()//Only for JsonToValue
+    {
+        currentState = typeof(PlayerStateNull).ToString();
+    }
     public PlayerValues(string playerName, Vector2 velocity, Vector2 coordinate)
     {
         this.playerName = playerName;
-        this.velocity = velocity;
+        this.curVelocity = velocity;
         this.coordinate = coordinate;
+        this.isPlayerCreated = true;
     }
+
 
 }
 public class AllPlayerValues
 {
     public List<PlayerValues> valueList;
-    public AllPlayerValues(PlayerValues aPlayer, PlayerValues bPlayer, PlayerValues cPlayer)
+    public AllPlayerValues()
     {
-        valueList = new List<PlayerValues>
-        {
-            aPlayer,
-            bPlayer,
-            cPlayer
-        };
+        valueList = new List<PlayerValues> { };
     }
-}
-public class PlayerValuesHandler
-{
-    public PlayerValues aPlayer, bPlayer, cPlayer;
-    AllPlayerValues allPlayerValues;
-
-    public PlayerValuesHandler(PlayerValues aPlayer, PlayerValues bPlayer, PlayerValues cPlayer)
+    public void AddPlayer(PlayerValues player)
     {
-        this.aPlayer = aPlayer;
-        this.bPlayer = bPlayer;
-        this.cPlayer = cPlayer;
-        allPlayerValues = new AllPlayerValues(aPlayer,bPlayer,cPlayer);
+        valueList.Add(player);
     }
-    public void ValuesToJson()
+    public void AddPlayer(string playerName, Vector2 velocity, Vector2 coordinate)
     {
-        StringBuilder sb = new StringBuilder();
-        JsonWriter jr = new JsonWriter(sb);
-        jr.PrettyPrint = true;
-        jr.IndentValue = 4;
-        JsonMapper.ToJson(this.allPlayerValues, jr);
-        File.WriteAllText(Application.dataPath + "/Resources/PlayerValues.json", sb.ToString());
-        return;
-    }
-    public PlayerValues GetPlayerByName(string playerName)
-    {
-        if (this.allPlayerValues == null)
-        {
-            return null;
-        }
-        else
-        {
-            var m = allPlayerValues.valueList.Where(item => item.playerName == playerName);
-            return m.FirstOrDefault();
-        }
+        valueList.Add(new PlayerValues(playerName, velocity, coordinate));
     }
 }

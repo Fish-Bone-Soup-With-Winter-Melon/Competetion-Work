@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             isGround = false;
         }
-        Debug.Log(isGround);
+        // Debug.Log(isGround);
     }
 
     public void CheckIsOnHorizontalIce()
