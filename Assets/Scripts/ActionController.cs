@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ActionController : MonoBehaviour
 {
-    public GameObject player;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     public Sprite[] pic;
@@ -12,8 +11,8 @@ public class ActionController : MonoBehaviour
     private float DELTA=0.01f;
     private void Start()
     {
-        sr = player.GetComponent<SpriteRenderer>();
-        rb = player.GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
     public void Stand()
     {
@@ -24,11 +23,25 @@ public class ActionController : MonoBehaviour
         runCnt++;
         if (runCnt == 20)
         {
-            sr.sprite = pic[1];
+            if (rb.velocity.y > 0)
+            {
+                sr.sprite = pic[1];
+            }
+            else
+            {
+                sr.sprite = pic[2];
+            }
         }
         else if(runCnt==40)
         {
-            sr.sprite = pic[2];
+            if (rb.velocity.y > 0)
+            {
+                sr.sprite = pic[3];
+            }
+            else
+            {
+                sr.sprite = pic[4];
+            }
             runCnt = 0;
         }
     }
@@ -36,26 +49,26 @@ public class ActionController : MonoBehaviour
     {
         if (rb.velocity.y > 0)
         {
-            sr.sprite = pic[3];
+            sr.sprite = pic[5];
         }
         else
         {
-            sr.sprite = pic[4];
+            sr.sprite = pic[6];
         }
     }
     public void Dash()
     {
         if (rb.velocity.x > DELTA)
         {
-            sr.sprite = pic[5]; 
+            sr.sprite = pic[7]; 
         }
         else if (rb.velocity.x < -DELTA)
         {
-            sr.sprite = pic[6];
+            sr.sprite = pic[8];
         }
         else
         {
-            sr.sprite = pic[7];
+            sr.sprite = pic[9];
         }
     }
 }

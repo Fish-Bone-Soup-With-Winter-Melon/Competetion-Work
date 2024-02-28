@@ -15,6 +15,7 @@ public class PlayerStateJump : PlayerState
     public override void Enter()
     {
         // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(0,ySpeed);
+        actionController.Jump();
         rigidbody2D.velocity += new Vector2(0,ySpeed);
         time = 0;
         Debug.Log("Jump");

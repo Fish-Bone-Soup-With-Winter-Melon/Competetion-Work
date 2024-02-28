@@ -18,6 +18,7 @@ public class PlayerStateInAir : PlayerState
         // 暂时不这样检测，等待碰撞检测的完善
         // if(playerController.isMud || playerController.isGround || playerController.isIce)
         //     stateMachine.SwitchState(stateMachine.stateIdle);
+        actionController.Jump();
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(-xSpeed,0);

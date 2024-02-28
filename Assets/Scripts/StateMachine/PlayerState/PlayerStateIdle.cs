@@ -8,6 +8,7 @@ public class PlayerStateIdle : PlayerState
     public override void Enter()
     {
         // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        actionController.Stand();
         rigidbody2D.velocity = new Vector2(0,0);
         Debug.Log("Idle");
     }

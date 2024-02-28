@@ -22,7 +22,7 @@ public class PlayerStateMachine : StateMachine
     public Vector2 speedBoost;
     public PlayerStateRun playerStateRun;
     public PlayerStateInAir playerStateInAir;
-
+    public ActionController actionController;
     //在这里设置角色初始数据
     void Awake()
     {
@@ -30,9 +30,10 @@ public class PlayerStateMachine : StateMachine
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         playerController = GetComponent<PlayerController>();
+        actionController = GetComponent<ActionController>();
         foreach (PlayerState state in states)
         {
-            state.Initialize(animator, this, playerRigidbody, playerController);
+            state.Initialize(animator, this, playerRigidbody, playerController,actionController);
             stateTable.Add(state.GetType(), state);
         }
         playerStateRun = (PlayerStateRun)stateTable[typeof(PlayerStateRun)];

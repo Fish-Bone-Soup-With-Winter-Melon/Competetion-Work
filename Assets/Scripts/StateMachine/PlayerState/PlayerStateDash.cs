@@ -128,6 +128,7 @@ public class PlayerStateDash : PlayerState
         {
             Identify();
             Dash();
+            actionController.Dash();
         }
         if ((direction == Direction.Left || direction == Direction.Right) && rigidbody2D.velocity.x == 0)
         {

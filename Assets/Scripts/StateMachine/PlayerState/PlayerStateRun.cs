@@ -18,6 +18,7 @@ public class PlayerStateRun : PlayerState
     }
     public override void LogicUpdate()
     {
+        actionController.Run();
         if(Input.GetKey(KeyCode.RightArrow))
             // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed,0);
             rigidbody2D.velocity = new Vector2(xSpeed,0) + playerStateMachine1.speedBoost;
