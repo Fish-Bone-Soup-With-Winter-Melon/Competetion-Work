@@ -1,0 +1,20 @@
+
+{
+    "valueList" : [
+        {
+            "playerName" : "bsy",
+            "isPlayerCreated" : true,
+            "isJumpBoosted"   : false,
+            "jumpBoostedTime" : 0,
+            "curVelocity"     : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "coordinate"      : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "currentState"    : "PlayerStateNull"
+        }
+    ]
+}

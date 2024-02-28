@@ -20,6 +20,10 @@ public class PlayerStateIdle : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateRun));
         if (Input.GetKeyDown(KeyCode.D))
             stateMachine.SwitchState(typeof(PlayerStateRun));
+        if (playerController.isGround == false)
+        {
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
+        }
     }
     public override void PhysicUpdate()
     {

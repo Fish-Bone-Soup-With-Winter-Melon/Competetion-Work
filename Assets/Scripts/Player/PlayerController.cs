@@ -73,8 +73,8 @@ public class PlayerController : MonoBehaviour
     {
         //TODO:STATE
 
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isGround = true;
@@ -83,13 +83,13 @@ public class PlayerController : MonoBehaviour
         {
             isGround = false;
         }
-        Debug.Log(isGround);
+        // Debug.Log(isGround);
     }
 
     public void CheckIsOnHorizontalIce()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, IceLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, IceLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isIce = true;
@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalMud()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.5f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
         if (leftCheckRay || rightCheckRay)
         {
             isMud = true;

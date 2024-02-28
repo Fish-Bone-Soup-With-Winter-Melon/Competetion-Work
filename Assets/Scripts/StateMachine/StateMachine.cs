@@ -7,8 +7,8 @@ public class StateMachine : MonoBehaviour
 {
     //碰撞检测不知道该写在哪才能生效
     // public bool collisionFlag = false;
-    protected IState currentState;
-    protected Dictionary<System.Type,IState> stateTable;
+    public IState currentState;
+    public Dictionary<System.Type,IState> stateTable;
     protected virtual void Start()
     {
 
