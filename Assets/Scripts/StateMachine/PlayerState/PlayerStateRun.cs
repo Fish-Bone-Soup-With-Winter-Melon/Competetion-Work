@@ -20,10 +20,10 @@ public class PlayerStateRun : PlayerState
     {
         if(Input.GetKey(KeyCode.RightArrow))
             // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed,0);
-            rigidbody2D.velocity = new Vector2(xSpeed,0);
+            rigidbody2D.velocity = new Vector2(xSpeed,0) + playerStateMachine1.speedBoost;
         else if(Input.GetKey(KeyCode.LeftArrow))
             // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(-xSpeed,0);
-            rigidbody2D.velocity = new Vector2(-xSpeed,0);
+            rigidbody2D.velocity = new Vector2(-xSpeed,0) - playerStateMachine1.speedBoost;
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             stateMachine.SwitchState(typeof(PlayerStateIdle));

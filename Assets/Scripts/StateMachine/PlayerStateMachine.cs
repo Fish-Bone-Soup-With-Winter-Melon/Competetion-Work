@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
@@ -18,8 +19,10 @@ public class PlayerStateMachine : StateMachine
     public GameObject plyaerObject;
     public Rigidbody2D playerRigidbody;
     public PlayerController playerController;
+    public Vector2 speedBoost;
+    public PlayerStateRun playerStateRun;
+    public PlayerStateInAir playerStateInAir;
 
-    
     //在这里设置角色初始数据
     void Awake()
     {
@@ -29,9 +32,13 @@ public class PlayerStateMachine : StateMachine
         playerController = GetComponent<PlayerController>();
         foreach (PlayerState state in states)
         {
-            state.Initialize(animator,this,playerRigidbody,playerController);
-            stateTable.Add(state.GetType(),state);
+            state.Initialize(animator, this, playerRigidbody, playerController);
+            stateTable.Add(state.GetType(), state);
         }
+        playerStateRun = (PlayerStateRun)stateTable[typeof(PlayerStateRun)];
+        playerStateRun.Initialize(this);
+        playerStateInAir = (PlayerStateInAir)stateTable[typeof(PlayerStateInAir)];
+        playerStateInAir.Initialize(this);
     }
     protected override void Start()
     {

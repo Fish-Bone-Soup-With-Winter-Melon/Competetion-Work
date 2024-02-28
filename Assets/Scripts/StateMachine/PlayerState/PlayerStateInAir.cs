@@ -21,12 +21,12 @@ public class PlayerStateInAir : PlayerState
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(-xSpeed,0);
-            rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y);
+            rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y) - playerStateMachine1.speedBoost;
         }
         else if(Input.GetKey(KeyCode.RightArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(xSpeed,0);
-            rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y);
+            rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y) + playerStateMachine1.speedBoost;
         }
         // if(Input.GetKeyUp(KeyCode.RightArrow))
         // {
