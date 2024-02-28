@@ -6,10 +6,11 @@ public class GameController : MonoBehaviour
     public MapManager mapManager;
     public UIManager uiManager;
     public PlayerController playerController;
-    public SceneManager sceneManager;
+    public SceneController sceneController;
 
     void StartGame()
     {
+        //sceneController.LoadScene();
         // 初始化游戏，设置初始状态。
         // mapManager.GenerateMap();
     }
@@ -39,7 +40,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         // 游戏进行中调用，50ms一次
-        playerController.CheckCollision();
+        //playerController.CheckCollision();
         // Debug.Log(playerController.isGround);
         // !!! 为防止出现时序问题，所有其他文件中涉及到随时更新的函数调用必须在本窗口进行。
     }

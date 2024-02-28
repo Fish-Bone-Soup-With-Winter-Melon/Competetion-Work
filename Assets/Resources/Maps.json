@@ -5,306 +5,131 @@
             "mapName" : "map_0",
             "groundTiles" : [
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -8,
-                    "y"        : -1
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -7,
-                    "y"        : -1
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -6,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : -6,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -5,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : -5,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -4,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : -4,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -3,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : -2,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
+                    "x"        : -2,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : -1,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
+                    "x"        : -1,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 0,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
+                    "x"        : 0,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 1,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
+                    "x"        : 1,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 2,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
+                    "x"        : 2,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 3,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : 3,
-                    "y"        : -1
+                    "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : 4,
                     "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_1",
+                    "tileName" : "Temp_0",
                     "x"        : 4,
                     "y"        : -1
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : 5,
-                    "y"        : -2
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 0
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : 5,
-                    "y"        : -1
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 1
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : 6,
-                    "y"        : -2
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_1",
-                    "x"        : 6,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_1",
-                    "x"        : 7,
-                    "y"        : -2
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 3
                 }
             ],
             "iceTiles"    : [
                 {
                     "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : 5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : 6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -14,
-                    "y"        : 7
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -13,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -13,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -13,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -13,
-                    "y"        : 2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -13,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -12,
-                    "y"        : 2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : -7
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : 1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -11,
-                    "y"        : 2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -10,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -10,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -10,
-                    "y"        : 1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -9,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -9,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -9,
-                    "y"        : 0
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -9,
-                    "y"        : 1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -8,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -8,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
                     "x"        : -8,
                     "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -8,
-                    "y"        : 0
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -7,
-                    "y"        : -5
                 },
                 {
                     "tileName" : "Temp_0",
@@ -313,68 +138,33 @@
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : -7,
-                    "y"        : 0
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -6,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
                     "x"        : -6,
                     "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -6,
-                    "y"        : 0
                 },
                 {
                     "tileName" : "Temp_0",
                     "x"        : -5,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -5,
-                    "y"        : -1
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
                     "x"        : -4,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -4,
-                    "y"        : -1
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
                     "x"        : -3,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -3,
-                    "y"        : -1
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
                     "x"        : -2,
-                    "y"        : -5
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
                     "x"        : -2,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : -1,
-                    "y"        : -5
+                    "y"        : 2
                 },
                 {
                     "tileName" : "Temp_0",
@@ -383,390 +173,200 @@
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 0,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 0,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 1,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 1,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 2,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 2,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 3,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 3,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 4,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 4,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 5,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 5,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 6,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 6,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 7,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 7,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 7,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 8,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 8,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 9,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 9,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 10,
-                    "y"        : -7
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 10,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : -7
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : -1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : 0
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 11,
-                    "y"        : 1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -8
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -7
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -6
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -5
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -4
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -3
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : -2
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : 1
-                },
-                {
-                    "tileName" : "Temp_0",
-                    "x"        : 12,
+                    "x"        : -1,
                     "y"        : 2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : 3
+                    "x"        : 0,
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : 4
+                    "x"        : 0,
+                    "y"        : 2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : 5
+                    "x"        : 1,
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 12,
-                    "y"        : 6
+                    "x"        : 1,
+                    "y"        : 2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
-                    "y"        : -8
+                    "x"        : 2,
+                    "y"        : -2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
+                    "x"        : 2,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 3,
+                    "y"        : -2
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 3,
+                    "y"        : 2
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : -2
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
                     "y"        : -1
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
+                    "x"        : 4,
                     "y"        : 0
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
-                    "y"        : 5
+                    "x"        : 4,
+                    "y"        : 1
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
-                    "y"        : 6
+                    "x"        : 4,
+                    "y"        : 2
                 },
                 {
                     "tileName" : "Temp_0",
-                    "x"        : 13,
-                    "y"        : 7
+                    "x"        : 4,
+                    "y"        : 3
                 }
             ],
             "mudTiles"    : [
                 {
-                    "tileName" : "Temp_2",
-                    "x"        : -10,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : -9,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -8,
-                    "y"        : 3
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -7,
-                    "y"        : 3
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -6,
-                    "y"        : 3
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -5,
-                    "y"        : 3
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -4,
-                    "y"        : 3
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : -3,
-                    "y"        : 2
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
+                    "x"        : -2,
+                    "y"        : -2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : -2,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
+                    "x"        : -1,
+                    "y"        : -2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : -1,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
+                    "x"        : 0,
+                    "y"        : -2
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 0,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
-                    "x"        : 0,
-                    "y"        : 3
+                    "tileName" : "Temp_0",
+                    "x"        : 1,
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : 1,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
-                    "x"        : 1,
-                    "y"        : 3
+                    "tileName" : "Temp_0",
+                    "x"        : 2,
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : 2,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
-                    "x"        : 2,
-                    "y"        : 3
+                    "tileName" : "Temp_0",
+                    "x"        : 3,
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : 3,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
-                    "x"        : 3,
-                    "y"        : 3
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : -2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : -1
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 0
+                },
+                {
+                    "tileName" : "Temp_0",
+                    "x"        : 4,
+                    "y"        : 1
+                },
+                {
+                    "tileName" : "Temp_0",
                     "x"        : 4,
                     "y"        : 2
                 },
                 {
-                    "tileName" : "Temp_2",
+                    "tileName" : "Temp_0",
                     "x"        : 4,
                     "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 5,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 6,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 7,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 8,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 9,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 10,
-                    "y"        : 3
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 11,
-                    "y"        : 4
-                },
-                {
-                    "tileName" : "Temp_2",
-                    "x"        : 12,
-                    "y"        : 4
                 }
             ]
         }
