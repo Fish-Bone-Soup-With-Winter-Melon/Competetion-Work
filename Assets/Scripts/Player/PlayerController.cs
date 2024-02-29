@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public bool isIce;
     public bool isMud;
-    float rayLength = 0.6f;
+    float rayLength = 2f;
 
     // void Move()
     // {
