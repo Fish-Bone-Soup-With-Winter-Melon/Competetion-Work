@@ -6,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/InAir", fileName = "PlayerState_InAir")]
 public class PlayerStateInAir : PlayerState
 {
-    public float xSpeed = 5.0f;
-    public float ySpeed = 5.0f;
+    public float xSpeed;
     public override void Enter()
     {
         Debug.Log("InAir");
+        xSpeed = playerValues.initialVelocity.x;
     }
     
     public override void LogicUpdate()

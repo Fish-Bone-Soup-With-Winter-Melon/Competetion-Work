@@ -14,6 +14,11 @@ public class PlayerValues : Values
     public bool isPlayerCreated = false;
     public bool isJumpBoosted = false;
     public float jumpBoostedTime = 0.0f;
+    public float gravityScale = 3;
+    public Vector2 jumpVelocity = new Vector2(0, 25);
+    public float dashSpeed;
+    public float dashTimeLimit;
+    public Vector2 initialVelocity = new Vector2(5,0);
 
     public PlayerValues()//Only for JsonToValue
     {

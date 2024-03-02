@@ -12,7 +12,8 @@ public class PlayerState : ScriptableObject, IState
     protected PlayerController playerController;
     protected PlayerStateMachine playerStateMachine1;
     public ActionController actionController;
-    public void Initialize(Animator animator, PlayerStateMachine stateMachine, Rigidbody2D rigidbody2D, PlayerController playerController,ActionController actionController)
+    protected PlayerValues playerValues;
+    public void Initialize(Animator animator, PlayerStateMachine stateMachine, Rigidbody2D rigidbody2D, PlayerController playerController,ActionController actionController,PlayerValues playerValues)
     {
         // Debug.Log(playerController);
         this.animator = animator;
@@ -20,6 +21,7 @@ public class PlayerState : ScriptableObject, IState
         this.rigidbody2D = rigidbody2D;
         this.playerController = playerController;
         this.actionController = actionController;
+        this.playerValues = playerValues;
     }
     public void Initialize(PlayerStateMachine playerStateMachine)
     {

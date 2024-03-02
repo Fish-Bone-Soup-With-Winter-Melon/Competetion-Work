@@ -26,14 +26,16 @@ public class PlayerStateMachine : StateMachine
     //在这里设置角色初始数据
     void Awake()
     {
+        playerValues = new PlayerValues();
         stateTable = new Dictionary<System.Type, IState>(states.Length);
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         playerController = GetComponent<PlayerController>();
         actionController = GetComponent<ActionController>();
+        playerRigidbody.gravityScale = playerValues.gravityScale;
         foreach (PlayerState state in states)
         {
-            state.Initialize(animator, this, playerRigidbody, playerController,actionController);
+            state.Initialize(animator, this, playerRigidbody, playerController,actionController,playerValues);
             stateTable.Add(state.GetType(), state);
         }
         playerStateRun = (PlayerStateRun)stateTable[typeof(PlayerStateRun)];

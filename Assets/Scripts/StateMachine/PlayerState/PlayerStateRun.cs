@@ -4,12 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Run", fileName = "PlayerState_Run")]
 public class PlayerStateRun : PlayerState
 {
-    public float xSpeed = 5.0f;
+    public float xSpeed;
     public override void Enter()
     {
         //放动画！
         // animator.Play("Run");
-        
+        xSpeed = playerValues.initialVelocity.x;
     }
     public override void PhysicUpdate()
     {
@@ -33,6 +33,8 @@ public class PlayerStateRun : PlayerState
             stateMachine.SwitchState(typeof(PlayerStateJump));
         if (Input.GetKeyDown(KeyCode.D))
             stateMachine.SwitchState(typeof(PlayerStateDash));
+        if (playerController.isGround == false)
+            stateMachine.SwitchState(typeof(PlayerStateInAir));
     }
     public override void Exit()
     {

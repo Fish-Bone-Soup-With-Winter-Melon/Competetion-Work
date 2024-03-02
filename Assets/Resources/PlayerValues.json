@@ -6,6 +6,17 @@
             "isPlayerCreated" : true,
             "isJumpBoosted"   : false,
             "jumpBoostedTime" : 0,
+            "gravityScale"    : 3,
+            "jumpVelocity"    : {
+                "x" : 0.0,
+                "y" : 45.0
+            },
+            "dashSpeed"       : 0,
+            "dashTimeLimit"   : 0,
+            "initialVelocity" : {
+                "x" : 5.0,
+                "y" : 0.0
+            },
             "curVelocity"     : {
                 "x" : 0.0,
                 "y" : 0.0

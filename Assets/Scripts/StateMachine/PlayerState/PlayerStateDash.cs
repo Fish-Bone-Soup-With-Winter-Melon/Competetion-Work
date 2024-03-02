@@ -150,8 +150,9 @@ public class PlayerStateDash : PlayerState
     }
     public override void Exit()
     {
-        rigidbody2D.gravityScale = 1;//调回重力
+        rigidbody2D.gravityScale = playerValues.gravityScale;//调回重力
         rigidbody2D.velocity = new Vector2(0, 0);
+        Debug.Log("Dash Exit");
         // 也许可以加入冲刺后的惯性
     }
 }
