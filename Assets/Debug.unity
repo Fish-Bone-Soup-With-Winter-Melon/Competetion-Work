@@ -169,7 +169,6 @@ Transform:
   m_Children:
   - {fileID: 847004489}
   - {fileID: 731719469}
-  - {fileID: 1018790981}
   - {fileID: 446845286}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1316,8 +1315,6 @@ GameObject:
   - component: {fileID: 847004491}
   - component: {fileID: 847004490}
   - component: {fileID: 847004492}
-  - component: {fileID: 847004494}
-  - component: {fileID: 847004493}
   m_Layer: 7
   m_Name: Can touch
   m_TagString: Untagged
@@ -26849,7 +26846,6 @@ GameObject:
   - component: {fileID: 1068366559}
   - component: {fileID: 1068366561}
   - component: {fileID: 1068366562}
-  - component: {fileID: 1068366563}
   m_Layer: 0
   m_Name: Soyo
   m_TagString: Untagged
@@ -27088,9 +27084,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1363534, y: 1.3557692}
+  m_Offset: {x: -0.13635339, y: 1.2196302}
   serializedVersion: 2
-  m_Radius: 0.58667827
+  m_Radius: 0.4518339
 --- !u!58 &1068366556
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27123,9 +27119,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10743052, y: -1.2931952}
+  m_Offset: {x: -0.10743049, y: -1.1790142}
   serializedVersion: 2
-  m_Radius: 0.5949431
+  m_Radius: 0.48184782
 --- !u!58 &1068366557
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27238,9 +27234,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.75010127, y: -1.539357}
+  m_Offset: {x: -0.6979028, y: -1.3417361}
   serializedVersion: 2
-  m_Radius: 0.2992923
+  m_Radius: 0.2688429
 --- !u!58 &1068366560
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27273,9 +27269,42 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.52458143, y: -1.5443071}
+  m_Offset: {x: 0.47238377, y: -1.3247283}
   serializedVersion: 2
-  m_Radius: 0.28458324
+  m_Radius: 0.2671842
+--- !u!114 &1068366561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068366544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04922cc5ce208684487ccd9ffc02f48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+--- !u!114 &1068366562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068366544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17fdc831000c5c4dac3ed721c03e2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D_1: {fileID: 0}
+  gameObject_1: {fileID: 0}
+  playerStateMachine: {fileID: 0}
+  collider2D_1: {fileID: 0}
+  effect: 0
+  collisionObjName: 
+  effectTimeLimit: 10
+  playerController: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -27283,4 +27312,4 @@ SceneRoots:
   - {fileID: 422858486}
   - {fileID: 208903475}
   - {fileID: 1068366548}
-  - {fileID: 793341306}
+  - {fileID: 381253672}
