@@ -8,9 +8,9 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerStateDash : PlayerState
 {
     private float timer;
-    public float dashTimeLimit = 0.5f;
+    public float dashTimeLimit = 0.4f;
     public float inputTimeLimit = 0.05f;
-    public float dashSpeed = 50f;
+    public float dashSpeed = 100f;
     private bool isDashed;
     private enum Direction
     {
