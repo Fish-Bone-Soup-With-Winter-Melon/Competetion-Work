@@ -15,7 +15,7 @@ public class PlayerValues : Values
     public bool isJumpBoosted = false;
     public float jumpBoostedTime = 0.0f;
     public float gravityScale = 3;
-    public Vector2 jumpVelocity = new Vector2(0, 10);
+    public Vector2 jumpVelocity = new Vector2(0, 15);
     public float dashSpeed;
     public float dashTimeLimit;
     public Vector2 initialVelocity = new Vector2(5,0);
