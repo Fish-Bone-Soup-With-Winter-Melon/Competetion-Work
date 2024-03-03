@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
     public MapManager mapManager;
     public UIManager uiManager;
     public PlayerController playerController;
-    public SceneController sceneController;
+    public SceneControllerI sceneController;
 
     void StartGame()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class SceneControllerI : MonoBehaviour
 {
     string[] SceneList = { "init","DebugScenes/1" };
     int pointer = 1;
