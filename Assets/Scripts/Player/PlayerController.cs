@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int player_id;                  
-    public GameObject player_obj;   
-    float speed;                    
-    float accelerate;               
+    int player_id;
+    public GameObject player_obj;
+    float speed;
+    float accelerate;
 
     public UIManager uiManager;
     public PropManager propManager;
@@ -37,9 +37,10 @@ public class PlayerController : MonoBehaviour
 
     public void CheckCollision()
     {
-        CheckIsOnHorizontalGround();       
+        CheckIsOnHorizontalGround();
         CheckIsOnHorizontalIce();
         CheckIsOnHorizontalMud();
+        Debug.Log("isIce: " + isIce + " isGround: " + isGround + " isMud: " + isMud);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -65,7 +66,8 @@ public class PlayerController : MonoBehaviour
         Vector2 playerPosition = transform.position;
         RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
         Color rayColor = hit ? Color.red : Color.green;
-        Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
+        if (layer == IceLayer)
+            Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
         return hit;
     }
 
@@ -75,14 +77,17 @@ public class PlayerController : MonoBehaviour
 
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
-        if (leftCheckRay || rightCheckRay)
-        {
-            isGround = true;
-        }
-        else
-        {
-            isGround = false;
-        }
+        if (!isIce && !isMud)
+            if (leftCheckRay || rightCheckRay)
+            {
+                isGround = true;
+                isIce = false;
+                isMud = false;
+            }
+            else
+            {
+                isGround = false;
+            }
         // Debug.Log(isGround);
     }
 
@@ -90,27 +95,37 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
-        if (leftCheckRay || rightCheckRay)
+        if ((!isGround && !isMud) || isIce)
         {
-            isIce = true;
+            if (leftCheckRay || rightCheckRay)
+            {
+                isIce = true;
+                isGround = true;
+            }
+            else
+            {
+                isIce = false;
+            }
         }
-        else
-        {
-            isIce = false;
-        }
+
+
     }
 
     public void CheckIsOnHorizontalMud()
     {
         RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
         RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
-        if (leftCheckRay || rightCheckRay)
+        if ((!isIce && !isGround) || isMud)
         {
-            isMud = true;
-        }
-        else
-        {
-            isMud = false;
+            if (leftCheckRay || rightCheckRay)
+            {
+                isMud = true;
+                isGround = true;
+            }
+            else
+            {
+                isMud = false;
+            }
         }
     }
 

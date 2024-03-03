@@ -8,11 +8,6 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
-    //public PlayerStateIdle stateIdle;
-    //public PlayerStateRun stateRun;
-    //public PlayerStateJump stateJump;
-    //public PlayerStateDash stateDash;
-    //public PlayerStateInAir stateInAir;
     [SerializeField] PlayerState[] states;
     public PlayerValues playerValues;
     Animator animator;
@@ -24,15 +19,22 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateInAir playerStateInAir;
     public ActionController actionController;
     public PlayerStateAfterDash playerStateAfterDash;
+    public CollisionManager collisionManager;
+    public PlayerTerrain playerTerrain;
     //在这里设置角色初始数据
     void Awake()
     {
+        playerTerrain = GetComponent<PlayerTerrain>();
         playerValues = new PlayerValues();
         stateTable = new Dictionary<System.Type, IState>(states.Length);
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         playerController = GetComponent<PlayerController>();
         actionController = GetComponent<ActionController>();
+        collisionManager = GetComponent<CollisionManager>();
+        playerTerrain.playerValues = playerValues;
+        speedBoost = playerValues.boostVelocity;
+        collisionManager.playerValues = playerValues;
 
         playerRigidbody.gravityScale = playerValues.gravityScale;
         foreach (PlayerState state in states)
