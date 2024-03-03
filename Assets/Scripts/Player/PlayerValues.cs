@@ -18,6 +18,7 @@ public class PlayerValues : Values
     public Vector2 jumpVelocity = new Vector2(0, 15);
     public float dashSpeed;
     public float dashTimeLimit;
+    public Vector2 boostVelocity = new Vector2(0,0);
     public Vector2 initialVelocity = new Vector2(5,0);
 
     public PlayerValues()//Only for JsonToValue

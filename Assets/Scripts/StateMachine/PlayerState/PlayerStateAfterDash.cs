@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using UnityEditor.Experimental.GraphView;
+// using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/AfterDash", fileName = "PlayerState_AfterDash")]
 public class PlayerStateAfterDash : PlayerState
@@ -22,12 +22,12 @@ public class PlayerStateAfterDash : PlayerState
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(-xSpeed,0);
-            rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y) - playerStateMachine1.speedBoost;
+            rigidbody2D.velocity = new Vector2(-xSpeed,rigidbody2D.velocity.y) - playerValues.boostVelocity;            
         }
         else if(Input.GetKey(KeyCode.RightArrow))
         {
             // stateMachine.GetComponent<Rigidbody2D>().velocity += new Vector2(xSpeed,0);
-            rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y) + playerStateMachine1.speedBoost;
+            rigidbody2D.velocity = new Vector2(xSpeed,rigidbody2D.velocity.y) + playerValues.boostVelocity;
         }
         // if(Input.GetKeyUp(KeyCode.RightArrow))
         // {

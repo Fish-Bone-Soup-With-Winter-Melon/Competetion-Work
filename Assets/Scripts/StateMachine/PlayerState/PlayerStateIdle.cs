@@ -10,6 +10,7 @@ public class PlayerStateIdle : PlayerState
         // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         actionController.Stand();
         rigidbody2D.velocity = new Vector2(0,0);
+        rigidbody2D.gravityScale = 0;
         // Debug.Log("Idle");
     }
     
@@ -32,6 +33,6 @@ public class PlayerStateIdle : PlayerState
     }
     public override void Exit()
     {
-        
+        rigidbody2D.gravityScale = playerValues.gravityScale;
     }
 }
