@@ -22,9 +22,7 @@ public class PlayerStateJump : PlayerState
         ValueInitialize();
         actionController.Jump();
         rigidbody2D.velocity += new Vector2(0, ySpeed);
-        // Debug.Log(ySpeed);
         time = 0;
-        // Debug.Log("Jump");
     }
     public override void LogicUpdate()
     {

@@ -23,6 +23,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateRun playerStateRun;
     public PlayerStateInAir playerStateInAir;
     public ActionController actionController;
+    public PlayerStateAfterDash playerStateAfterDash;
     //在这里设置角色初始数据
     void Awake()
     {
@@ -44,6 +45,8 @@ public class PlayerStateMachine : StateMachine
         playerStateRun.Initialize(this);
         playerStateInAir = (PlayerStateInAir)stateTable[typeof(PlayerStateInAir)];
         playerStateInAir.Initialize(this);
+        playerStateAfterDash = (PlayerStateAfterDash)stateTable[typeof(PlayerStateAfterDash)];
+        playerStateAfterDash.Initialize(this);
 
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }

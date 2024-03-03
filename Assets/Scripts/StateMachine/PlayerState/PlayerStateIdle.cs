@@ -18,7 +18,7 @@ public class PlayerStateIdle : PlayerState
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
             stateMachine.SwitchState(typeof(PlayerStateRun));
         if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.SwitchState(typeof(PlayerStateRun));
+            stateMachine.SwitchState(typeof(PlayerStateJump));
         if (Input.GetKeyDown(KeyCode.D))
             stateMachine.SwitchState(typeof(PlayerStateRun));
         if (playerController.isGround == false)

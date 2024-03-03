@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/InAir", fileName = "PlayerState_InAir")]
-public class PlayerStateInAir : PlayerState
+[CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/AfterDash", fileName = "PlayerState_AfterDash")]
+public class PlayerStateAfterDash : PlayerState
 {
     public float xSpeed;
     public override void Enter()
@@ -45,12 +45,9 @@ public class PlayerStateInAir : PlayerState
         }
         // Debug.Log(playerController.isGround);
         if(playerController.isGround == true)
-            if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-                stateMachine.SwitchState(typeof(PlayerStateRun));
-            else
-                stateMachine.SwitchState(typeof(PlayerStateIdle));
-        if (Input.GetKeyDown(KeyCode.D))
-            stateMachine.SwitchState(typeof(PlayerStateDash));
+            stateMachine.SwitchState(typeof(PlayerStateIdle));
+        // if (Input.GetKeyDown(KeyCode.D))
+        //     stateMachine.SwitchState(typeof(PlayerStateDash));
     }
     public override void PhysicUpdate()
     {
