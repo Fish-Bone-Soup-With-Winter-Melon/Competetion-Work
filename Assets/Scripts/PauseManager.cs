@@ -7,8 +7,10 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject blurPanel;
     public Button continueButton;
     public Button mainMenuButton;
+    public GameObject settingPanel;
 
     private bool isPaused = false;
+    private bool anotherPaused = false;
 
     void Update()
     {
@@ -27,23 +29,34 @@ public class PauseMenuManager : MonoBehaviour
         {
             pauseMenuUI.SetActive(true);
             blurPanel.SetActive(true);
-            continueButton.interactable = true;
-            mainMenuButton.interactable = true;
         }
         else
         {
             pauseMenuUI.SetActive(false);
             blurPanel.SetActive(false);
-            continueButton.interactable = false;
-            mainMenuButton.interactable = false;
         }
     }
-
+    void OnlyPause()
+    {
+        anotherPaused = !anotherPaused;
+        Time.timeScale = anotherPaused ? 0 : 1;
+    }
+    
     public void OnContinueButtonClick()
     {
+        Debug.Log("Continue!");
         TogglePause();
     }
-
+    public void OnSettingButtonClick()
+    {
+        settingPanel.SetActive(true);
+        OnlyPause();
+    }
+    public void OffSettingButtonClick()
+    {
+        settingPanel.SetActive(false);
+        OnlyPause();
+    }
     public void OnMainMenuButtonClick()
     {
         Debug.Log("Return to Main Menu");
