@@ -45,7 +45,10 @@ public class PlayerStateInAir : PlayerState
         }
         // Debug.Log(playerController.isGround);
         if(playerController.isGround == true)
-            stateMachine.SwitchState(typeof(PlayerStateIdle));
+            if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                stateMachine.SwitchState(typeof(PlayerStateRun));
+            else
+                stateMachine.SwitchState(typeof(PlayerStateIdle));
         if (Input.GetKeyDown(KeyCode.D))
             stateMachine.SwitchState(typeof(PlayerStateDash));
     }
