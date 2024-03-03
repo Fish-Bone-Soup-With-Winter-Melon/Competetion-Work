@@ -10,7 +10,7 @@ public class PlayerStateJump : PlayerState
     public float xSpeed;
     private float ySpeed;
     public Vector2 velocity;
-    private float timeLimit = 0.1f;
+    private float timeLimit = 0.3f;
     public float time = 0;
     protected void ValueInitialize()
     {
@@ -19,11 +19,12 @@ public class PlayerStateJump : PlayerState
     }
     public override void Enter()
     {
+        ValueInitialize();
         actionController.Jump();
         rigidbody2D.velocity += new Vector2(0, ySpeed);
-        Debug.Log(ySpeed);
+        // Debug.Log(ySpeed);
         time = 0;
-        Debug.Log("Jump");
+        // Debug.Log("Jump");
     }
     public override void LogicUpdate()
     {
