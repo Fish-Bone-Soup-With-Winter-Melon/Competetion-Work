@@ -23,6 +23,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateRun playerStateRun;
     public PlayerStateInAir playerStateInAir;
     public ActionController actionController;
+    public PlayerStateAfterDash playerStateAfterDash;
     //在这里设置角色初始数据
     void Awake()
     {
@@ -32,16 +33,22 @@ public class PlayerStateMachine : StateMachine
         animator = GetComponentInChildren<Animator>();
         playerController = GetComponent<PlayerController>();
         actionController = GetComponent<ActionController>();
+
         playerRigidbody.gravityScale = playerValues.gravityScale;
         foreach (PlayerState state in states)
         {
             state.Initialize(animator, this, playerRigidbody, playerController,actionController,playerValues);
             stateTable.Add(state.GetType(), state);
         }
+
         playerStateRun = (PlayerStateRun)stateTable[typeof(PlayerStateRun)];
         playerStateRun.Initialize(this);
         playerStateInAir = (PlayerStateInAir)stateTable[typeof(PlayerStateInAir)];
         playerStateInAir.Initialize(this);
+        playerStateAfterDash = (PlayerStateAfterDash)stateTable[typeof(PlayerStateAfterDash)];
+        playerStateAfterDash.Initialize(this);
+
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     protected override void Start()
     {

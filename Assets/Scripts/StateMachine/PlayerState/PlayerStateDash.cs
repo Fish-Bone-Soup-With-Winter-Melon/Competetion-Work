@@ -8,9 +8,9 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerStateDash : PlayerState
 {
     private float timer;
-    public float dashTimeLimit = 0.5f;
+    public float dashTimeLimit = 0.4f;
     public float inputTimeLimit = 0.05f;
-    public float dashSpeed = 50f;
+    public float dashSpeed = 100f;
     private bool isDashed;
     private enum Direction
     {
@@ -132,25 +132,26 @@ public class PlayerStateDash : PlayerState
         }
         if ((direction == Direction.Left || direction == Direction.Right) && rigidbody2D.velocity.x == 0)
         {
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         else if ((direction == Direction.Up || direction == Direction.Down) && rigidbody2D.velocity.y == 0)
         {
             // stateMachine.SwitchState(stateMachine.stateInAir);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         else if ((direction == Direction.LeftDown || direction == Direction.LeftUp || direction == Direction.RightUp || direction == Direction.RightDown) && (rigidbody2D.velocity.y == 0 || rigidbody2D.velocity.x == 0))
         {
             rigidbody2D.velocity = new Vector2(0,0);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         if (timer >= dashTimeLimit)
             // stateMachine.SwitchState(stateMachine.stateInAir);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
     }
     public override void Exit()
     {
         rigidbody2D.gravityScale = playerValues.gravityScale;//调回重力
+        Debug.Log(rigidbody2D.gravityScale);
         rigidbody2D.velocity = new Vector2(0, 0);
         Debug.Log("Dash Exit");
         // 也许可以加入冲刺后的惯性

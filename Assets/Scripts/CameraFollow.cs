@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+
         if (target != null)
         {
             Vector3 desiredPosition = target.position + new Vector3(0, 0, -10);

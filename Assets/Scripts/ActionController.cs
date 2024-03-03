@@ -21,24 +21,24 @@ public class ActionController : MonoBehaviour
     public void Run()
     {
         runCnt++;
-        if (runCnt == 20)
+        if (runCnt == 120)
         {
-            if (rb.velocity.y > 0)
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 sr.sprite = pic[1];
             }
-            else
-            {
-                sr.sprite = pic[2];
-            }
-        }
-        else if(runCnt==40)
-        {
-            if (rb.velocity.y > 0)
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 sr.sprite = pic[3];
             }
-            else
+        }
+        else if(runCnt==240)
+        {
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                sr.sprite = pic[2];
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 sr.sprite = pic[4];
             }
@@ -47,12 +47,15 @@ public class ActionController : MonoBehaviour
     }
     public void Jump()
     {
-        if (rb.velocity.y > 0)
+        bool isRight = false;
+        if (Input.GetKey(KeyCode.RightArrow) || isRight)
         {
+            isRight = true;
             sr.sprite = pic[5];
         }
-        else
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
+            isRight = false;
             sr.sprite = pic[6];
         }
     }

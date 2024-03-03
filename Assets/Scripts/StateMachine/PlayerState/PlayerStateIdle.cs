@@ -10,7 +10,7 @@ public class PlayerStateIdle : PlayerState
         // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         actionController.Stand();
         rigidbody2D.velocity = new Vector2(0,0);
-        Debug.Log("Idle");
+        // Debug.Log("Idle");
     }
     
     public override void LogicUpdate()
@@ -18,7 +18,7 @@ public class PlayerStateIdle : PlayerState
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
             stateMachine.SwitchState(typeof(PlayerStateRun));
         if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.SwitchState(typeof(PlayerStateRun));
+            stateMachine.SwitchState(typeof(PlayerStateJump));
         if (Input.GetKeyDown(KeyCode.D))
             stateMachine.SwitchState(typeof(PlayerStateRun));
         if (playerController.isGround == false)

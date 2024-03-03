@@ -9,7 +9,7 @@
             "gravityScale"    : 3,
             "jumpVelocity"    : {
                 "x" : 0.0,
-                "y" : 45.0
+                "y" : 10.0
             },
             "dashSpeed"       : 0,
             "dashTimeLimit"   : 0,
