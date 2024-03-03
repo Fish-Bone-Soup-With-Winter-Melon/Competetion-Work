@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
@@ -19,8 +20,10 @@ public class CollisionManager : MonoBehaviour
     private float timer = 0;
     public float effectTimeLimit = 10;
     public PlayerController playerController;
+    // public GameObject gameObject_1;    
     void Awake()
     {
+        // gameObject = GetComponent<GameObject>();
         rigidbody2D_1 = GetComponent<Rigidbody2D>();
         gameObject_1 = GetComponent<GameObject>();
         playerStateMachine = GetComponent<PlayerStateMachine>();
@@ -44,8 +47,11 @@ public class CollisionManager : MonoBehaviour
             playerValues.gravityScale = -playerValues.gravityScale;
             rigidbody2D_1.gravityScale = playerValues.gravityScale;
             playerValues.jumpVelocity = -playerValues.jumpVelocity;
-            playerController.rayLength = 2f;
+            playerController.rayLength = Math.Abs(playerController.rayLength);
             rigidbody2D_1.SetRotation(0);
+            if(effect == Effect.GravityReverse)
+                gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
             effect = Effect.Default;
         }
     }
@@ -67,7 +73,9 @@ public class CollisionManager : MonoBehaviour
                 playerValues.jumpVelocity = -playerValues.jumpVelocity;
                 other.gameObject.SetActive(false);
                 rigidbody2D_1.SetRotation(180);
-                playerController.rayLength = -2f;
+                playerController.rayLength = -playerController.rayLength;
+                //mirror the gameobject
+                gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
                 timer = 0;
                 break;
         }

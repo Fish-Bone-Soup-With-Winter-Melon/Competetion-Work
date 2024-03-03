@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
     public bool isIce;
     public bool isMud;
-    public float rayLength = 2f;
+    public float rayLength = 1.7f;
 
     // void Move()
     // {
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         CheckIsOnHorizontalGround();
         CheckIsOnHorizontalIce();
         CheckIsOnHorizontalMud();
-        Debug.Log("isIce: " + isIce + " isGround: " + isGround + " isMud: " + isMud);
+        // Debug.Log("isIce: " + isIce + " isGround: " + isGround + " isMud: " + isMud);
     }
 
     void OnTriggerEnter2D(Collider2D other)
