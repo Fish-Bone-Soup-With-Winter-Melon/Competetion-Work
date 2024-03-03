@@ -132,21 +132,21 @@ public class PlayerStateDash : PlayerState
         }
         if ((direction == Direction.Left || direction == Direction.Right) && rigidbody2D.velocity.x == 0)
         {
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         else if ((direction == Direction.Up || direction == Direction.Down) && rigidbody2D.velocity.y == 0)
         {
             // stateMachine.SwitchState(stateMachine.stateInAir);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         else if ((direction == Direction.LeftDown || direction == Direction.LeftUp || direction == Direction.RightUp || direction == Direction.RightDown) && (rigidbody2D.velocity.y == 0 || rigidbody2D.velocity.x == 0))
         {
             rigidbody2D.velocity = new Vector2(0,0);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
         }
         if (timer >= dashTimeLimit)
             // stateMachine.SwitchState(stateMachine.stateInAir);
-            stateMachine.SwitchState(typeof(PlayerStateInAir));
+            stateMachine.SwitchState(typeof(PlayerStateAfterDash));
     }
     public override void Exit()
     {
