@@ -21,22 +21,22 @@ public class ActionController : MonoBehaviour
     public void Run()
     {
         runCnt++;
-        if (runCnt == 20)
+        if (runCnt == 80)
         {
-            if (rb.velocity.y > 0)
+            if (rb.velocity.x > 0)
             {
                 sr.sprite = pic[1];
             }
             else
             {
-                sr.sprite = pic[2];
+                sr.sprite = pic[3];
             }
         }
-        else if(runCnt==40)
+        else if(runCnt==160)
         {
-            if (rb.velocity.y > 0)
+            if (rb.velocity.x > 0)
             {
-                sr.sprite = pic[3];
+                sr.sprite = pic[2];
             }
             else
             {
@@ -47,7 +47,7 @@ public class ActionController : MonoBehaviour
     }
     public void Jump()
     {
-        if (rb.velocity.y > 0)
+        if (rb.velocity.x > 0)
         {
             sr.sprite = pic[5];
         }
