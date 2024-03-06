@@ -23,6 +23,7 @@ public class CollisionManager : MonoBehaviour
     // public GameObject gameObject_1;    
     void Awake()
     {
+        effect = Effect.Default;
         // gameObject = GetComponent<GameObject>();
         rigidbody2D_1 = GetComponent<Rigidbody2D>();
         gameObject_1 = GetComponent<GameObject>();
@@ -45,6 +46,7 @@ public class CollisionManager : MonoBehaviour
         {
             playerStateMachine.speedBoost = new Vector2(0, 0);
             playerValues.gravityScale = -playerValues.gravityScale;
+            Debug.Log("reverse");
             rigidbody2D_1.gravityScale = playerValues.gravityScale;
             playerValues.jumpVelocity = -playerValues.jumpVelocity;
             playerController.rayLength = Math.Abs(playerController.rayLength);
@@ -68,6 +70,7 @@ public class CollisionManager : MonoBehaviour
                 break;
             case "Notebook":
                 effect = Effect.GravityReverse;
+                Debug.Log("GravityReverse");
                 rigidbody2D_1.gravityScale = -playerValues.gravityScale;
                 playerValues.gravityScale = -playerValues.gravityScale;
                 playerValues.jumpVelocity = -playerValues.jumpVelocity;
