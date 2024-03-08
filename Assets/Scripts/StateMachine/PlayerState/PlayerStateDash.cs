@@ -8,10 +8,11 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerStateDash : PlayerState
 {
     private float timer;
-    public float dashTimeLimit = 0.4f;
+    public float dashTimeLimit = 0.6f;
     public float inputTimeLimit = 0.05f;
-    public float dashSpeed = 100f;
+    public float dashSpeed ;
     private bool isDashed;
+    public float halfDashSpeed;
     private enum Direction
     {
         Right, Left, Up, Down, RightUp, RightDown, LeftUp, LeftDown, Default
@@ -75,19 +76,19 @@ public class PlayerStateDash : PlayerState
     {
         if (direction == Direction.LeftDown)
         {
-            rigidbody2D.velocity = new Vector2(-(float)Math.Pow(dashSpeed*dashSpeed/2,0.5), -(float)Math.Pow(dashSpeed*dashSpeed/2,0.5));
+            rigidbody2D.velocity = new Vector2(-halfDashSpeed, -halfDashSpeed);
         }
         else if (direction == Direction.RightDown)
         {
-            rigidbody2D.velocity = new Vector2((float)Math.Pow(dashSpeed*dashSpeed/2,0.5), -(float)Math.Pow(dashSpeed*dashSpeed/2,0.5));
+            rigidbody2D.velocity = new Vector2(halfDashSpeed, -halfDashSpeed);
         }
         else if (direction == Direction.LeftUp)
         {
-            rigidbody2D.velocity = new Vector2(-(float)Math.Pow(dashSpeed*dashSpeed/2,0.5), (float)Math.Pow(dashSpeed*dashSpeed/2,0.5));
+            rigidbody2D.velocity = new Vector2(-halfDashSpeed, halfDashSpeed);
         }
         else if (direction == Direction.RightUp)
         {
-            rigidbody2D.velocity = new Vector2((float)Math.Pow(dashSpeed*dashSpeed/2,0.5), (float)Math.Pow(dashSpeed*dashSpeed/2,0.5));
+            rigidbody2D.velocity = new Vector2(halfDashSpeed, halfDashSpeed);
         }
         else if (direction == Direction.Right || direction == Direction.Default)
         {
@@ -110,6 +111,8 @@ public class PlayerStateDash : PlayerState
     }
     public override void Enter()
     {
+        dashSpeed = 20f;
+        halfDashSpeed = (float)Math.Pow(dashSpeed*dashSpeed/2,0.5);
         rigidbody2D.gravityScale = 0;//清除重力
         timer = 0;
         rigidbody2D.velocity = new Vector2(0, 0);

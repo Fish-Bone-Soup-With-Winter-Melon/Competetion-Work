@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
     {
         //TODO:STATE
 
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.35f, 0.0f), Vector2.down, rayLength, GroundLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.35f, 0.0f), Vector2.down, rayLength, GroundLayer);
         if (!isIce && !isMud)
             if (leftCheckRay || rightCheckRay)
             {
@@ -93,8 +93,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalIce()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, IceLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.35f, 0.0f), Vector2.down, rayLength, IceLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.35f, 0.0f), Vector2.down, rayLength, IceLayer);
         if ((!isGround && !isMud) || isIce)
         {
             if (leftCheckRay || rightCheckRay)
@@ -113,8 +113,8 @@ public class PlayerController : MonoBehaviour
 
     public void CheckIsOnHorizontalMud()
     {
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.45f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.35f, 0.0f), Vector2.down, rayLength, MudLayer);
+        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.35f, 0.0f), Vector2.down, rayLength, MudLayer);
         if ((!isIce && !isGround) || isMud)
         {
             if (leftCheckRay || rightCheckRay)
