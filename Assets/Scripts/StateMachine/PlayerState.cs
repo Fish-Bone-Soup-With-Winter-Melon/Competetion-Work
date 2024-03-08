@@ -27,6 +27,11 @@ public class PlayerState : ScriptableObject, IState
     {
         this.playerStateMachine1 = playerStateMachine;
     }
+    public void SetState(string stateName)
+    {
+        playerValues.currentState = stateName;
+        Debug.Log(stateName);
+    }
     public virtual void Enter()
     {
 

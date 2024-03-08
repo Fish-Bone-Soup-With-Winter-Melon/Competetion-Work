@@ -10,6 +10,7 @@ public class PlayerStateAfterDash : PlayerState
     public override void Enter()
     {
         // Debug.Log("InAir");
+        SetState("PlayerStateAfterDash");
         xSpeed = playerValues.initialVelocity.x;
     }
     

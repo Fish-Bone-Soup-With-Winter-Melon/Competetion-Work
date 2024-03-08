@@ -9,6 +9,7 @@ public class PlayerStateInAir : PlayerState
     public float xSpeed;
     public override void Enter()
     {
+        SetState("PlayerStateInAir");
         // Debug.Log("InAir");
         xSpeed = playerValues.initialVelocity.x;
     }

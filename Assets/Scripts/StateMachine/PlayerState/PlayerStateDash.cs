@@ -111,6 +111,7 @@ public class PlayerStateDash : PlayerState
     }
     public override void Enter()
     {
+        SetState("PlayerStateDash");
         dashSpeed = 20f;
         halfDashSpeed = (float)Math.Pow(dashSpeed*dashSpeed/2,0.5);
         rigidbody2D.gravityScale = 0;//清除重力

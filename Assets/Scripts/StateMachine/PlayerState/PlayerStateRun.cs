@@ -7,6 +7,7 @@ public class PlayerStateRun : PlayerState
     public float xSpeed;
     public override void Enter()
     {
+        SetState("PlayerStateRun");
         //放动画！
         // animator.Play("Run");
         xSpeed = playerValues.initialVelocity.x;

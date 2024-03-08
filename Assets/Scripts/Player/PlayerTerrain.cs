@@ -26,11 +26,13 @@ public class PlayerTerrain : MonoBehaviour
             playerValues.boostVelocity = new Vector2(-6f, 0);
             return;
         }
-        else if (playerController.isGround && playerStateMachine.currentState == playerStateMachine.stateTable[typeof(PlayerStateIdle)])
+        else if (playerController.isGround && 
+        (playerStateMachine.currentState == playerStateMachine.stateTable[typeof(PlayerStateIdle)] || 
+        playerStateMachine.currentState == playerStateMachine.stateTable[typeof(PlayerStateRun)]))
         {
             // Debug.Log(playerController.isGround);
             // Debug.Log("reset");
-            Debug.Log("Reset");
+            // Debug.Log("Reset");
             playerValues.boostVelocity = new Vector2(0, 0);
         }
     }
