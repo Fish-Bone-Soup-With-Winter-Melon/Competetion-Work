@@ -7,26 +7,31 @@ public class PlayerTerrain : MonoBehaviour
     public PlayerController playerController;
     // public playerValues playerValues;
     public PlayerValues playerValues;
+    public PlayerStateMachine playerStateMachine;
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerStateMachine = GetComponent<PlayerStateMachine>();
     }
     void Update()
     {
-        if (playerController.isGround)
+        if (playerController.isIce)
         {
-            if (playerController.isIce)
-            {
-                playerValues.boostVelocity = new Vector2(3f, 0);
-            }
-            else if (playerController.isMud)
-            {
-                playerValues.boostVelocity = new Vector2(-3f, 0);
-            }
-            else
-            {
-                playerValues.boostVelocity = new Vector2(0, 0);
-            }
+            playerValues.boostVelocity = new Vector2(6f, 0);
+            return;
+        }
+        else if (playerController.isMud)
+        {
+            // Debug.Log("Mud");
+            playerValues.boostVelocity = new Vector2(-6f, 0);
+            return;
+        }
+        else if (playerController.isGround && playerStateMachine.currentState == playerStateMachine.stateTable[typeof(PlayerStateIdle)])
+        {
+            // Debug.Log(playerController.isGround);
+            // Debug.Log("reset");
+            Debug.Log("Reset");
+            playerValues.boostVelocity = new Vector2(0, 0);
         }
     }
 }
