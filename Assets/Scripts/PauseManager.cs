@@ -66,5 +66,6 @@ public class PauseMenuManager : MonoBehaviour
     public void OnMainMenuButtonClick()
     {
         Debug.Log("Return to Main Menu");
+        Application.Quit();
     }
 }

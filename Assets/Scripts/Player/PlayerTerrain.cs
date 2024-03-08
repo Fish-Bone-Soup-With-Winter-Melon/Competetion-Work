@@ -17,13 +17,13 @@ public class PlayerTerrain : MonoBehaviour
     {
         if (playerController.isIce)
         {
-            playerValues.boostVelocity = new Vector2(6f, 0);
+            playerValues.terrainVelocity = new Vector2(6f, 0);
             return;
         }
         else if (playerController.isMud)
         {
             // Debug.Log("Mud");
-            playerValues.boostVelocity = new Vector2(-6f, 0);
+            playerValues.terrainVelocity = new Vector2(-6f, 0);
             return;
         }
         else if (playerController.isGround && 
@@ -33,7 +33,7 @@ public class PlayerTerrain : MonoBehaviour
             // Debug.Log(playerController.isGround);
             // Debug.Log("reset");
             // Debug.Log("Reset");
-            playerValues.boostVelocity = new Vector2(0, 0);
+            playerValues.terrainVelocity = new Vector2(0, 0);
         }
     }
 }

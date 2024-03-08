@@ -18,7 +18,7 @@ public class DebugTimer : MonoBehaviour
         if (timer >= 0.1)
         {
             timer = 0;
-            Debug.Log(playerController.isGround);
+            // Debug.Log(playerController.isGround);
         }
     }
 }

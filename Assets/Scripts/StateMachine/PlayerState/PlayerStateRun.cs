@@ -22,10 +22,10 @@ public class PlayerStateRun : PlayerState
         actionController.Run();
         if(Input.GetKey(KeyCode.RightArrow))
             // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed,0);
-            rigidbody2D.velocity = new Vector2(xSpeed,0) + playerValues.boostVelocity;
+            rigidbody2D.velocity = new Vector2(xSpeed,0) + playerValues.boostVelocity + playerValues.terrainVelocity;
         else if(Input.GetKey(KeyCode.LeftArrow))
             // stateMachine.GetComponent<Rigidbody2D>().velocity = new Vector2(-xSpeed,0);
-            rigidbody2D.velocity = new Vector2(-xSpeed,0) - playerValues.boostVelocity;
+            rigidbody2D.velocity = new Vector2(-xSpeed,0) - playerValues.boostVelocity - playerValues.terrainVelocity;
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             stateMachine.SwitchState(typeof(PlayerStateIdle));

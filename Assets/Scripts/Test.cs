@@ -14,6 +14,6 @@ public class Test : MonoBehaviour
         playerValuesHandler.AddPlayer("bsy",new Vector2(0,0),new Vector2(0,0));
         playerValuesHandler.ValuesToJson();
         playerValuesHandler.JsonToValues();
-        Debug.Log(playerValuesHandler.GetPlayerByName("bsy").playerName);
+        // Debug.Log(playerValuesHandler.GetPlayerByName("bsy").playerName);
     }
 }
