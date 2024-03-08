@@ -8,8 +8,9 @@ public class PauseMenuManager : MonoBehaviour
     public Button continueButton;
     public Button mainMenuButton;
     public GameObject settingPanel;
+    public GameObject Panel;
 
-    private bool isPaused = false;
+    private bool isPaused = true;
     private bool anotherPaused = false;
 
     void Update()
@@ -22,18 +23,23 @@ public class PauseMenuManager : MonoBehaviour
 
     void TogglePause()
     {
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0 : 1;
+        Time.timeScale = isPaused ? 1 : 0;
 
-        if (isPaused)
+        if (isPaused && !Panel.activeSelf)
         {
             pauseMenuUI.SetActive(true);
             blurPanel.SetActive(true);
+            isPaused = false;
         }
-        else
+        else if(!isPaused && !Panel.activeSelf)
         {
             pauseMenuUI.SetActive(false);
             blurPanel.SetActive(false);
+            isPaused = true;
+        }
+        else if(isPaused && Panel.activeSelf)
+        {
+            Panel.SetActive(false);
         }
     }
     void OnlyPause()
