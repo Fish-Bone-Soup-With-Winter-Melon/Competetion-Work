@@ -23,7 +23,7 @@ public class PauseMenuManager : MonoBehaviour
 
     void TogglePause()
     {
-        Time.timeScale = isPaused ? 1 : 0;
+        Time.timeScale = isPaused ? 0 : 1;
 
         if (isPaused && !Panel.activeSelf)
         {

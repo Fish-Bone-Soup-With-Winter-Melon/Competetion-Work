@@ -27675,6 +27675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  playerStateMachine: {fileID: 0}
 --- !u!114 &1068366562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28716,7 +28717,7 @@ RectTransform:
   m_GameObject: {fileID: 3803634479704618606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.31, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5632211257986251310}
