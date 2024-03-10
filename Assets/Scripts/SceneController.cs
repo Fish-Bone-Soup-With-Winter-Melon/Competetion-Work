@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class SceneControllerI : MonoBehaviour
 {
-    string[] SceneList = { "init","DebugScenes/1" };
-    int pointer = 1;
+    string[] SceneList = { "op","Scenes/init","debug" };
+    public int pointer;
     public void LoadScene()
     {
         Debug.Log("pointer:" + pointer);
-        // SceneManager.LoadScene(SceneList[pointer]);
+        SceneManager.LoadScene(SceneList[pointer]);
     }
 
-    void ReloadScene()
+    public void ReloadScene()
     {
-        // 重新加载当前场景
+        SceneManager.LoadScene(SceneList[pointer-1]);
     }
 
     void QuitGame()
