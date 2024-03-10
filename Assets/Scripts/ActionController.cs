@@ -21,7 +21,7 @@ public class ActionController : MonoBehaviour
     public void Run()
     {
         runCnt++;
-        if (runCnt == 120)
+        if (runCnt == 30)
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -32,7 +32,7 @@ public class ActionController : MonoBehaviour
                 sr.sprite = pic[3];
             }
         }
-        else if(runCnt==240)
+        else if(runCnt==60)
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {

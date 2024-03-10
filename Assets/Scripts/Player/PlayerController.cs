@@ -45,15 +45,15 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SpeedBoost"))
+        //if (other.gameObject.CompareTag("SpeedBoost"))
+        //{
+            //propManager.CollectProp(PropManager.PropType.SpeedBoost);
+            //Destroy(other.gameObject);
+        //}
+        //else if (other.gameObject.CompareTag("GravityReverse"))
         {
-            propManager.CollectProp(PropManager.PropType.SpeedBoost);
-            Destroy(other.gameObject);
-        }
-        else if (other.gameObject.CompareTag("GravityReverse"))
-        {
-            propManager.CollectProp(PropManager.PropType.GravityReverse);
-            Destroy(other.gameObject);
+            //propManager.CollectProp(PropManager.PropType.GravityReverse);
+            //Destroy(other.gameObject);
         }
     }
 
