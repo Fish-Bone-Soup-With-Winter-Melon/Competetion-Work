@@ -65,9 +65,9 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 playerPosition = transform.position;
         RaycastHit2D hit = Physics2D.Raycast(playerPosition + offset, diraction, length, layer);
-        Color rayColor = hit ? Color.red : Color.green;
-        if (layer == IceLayer)
-            Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
+        //Color rayColor = hit ? Color.red : Color.green;
+        //if (layer == IceLayer)
+        //    Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
         return hit;
     }
 
