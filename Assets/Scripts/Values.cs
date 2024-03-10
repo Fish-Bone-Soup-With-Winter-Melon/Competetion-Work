@@ -5,6 +5,6 @@ using UnityEngine;
 public class Values
 {
     public Vector2 curVelocity;
-    public Vector2 coordinate;
+    public Vector2 position;
     public string currentState;
 }

@@ -16,31 +16,35 @@ using System.IO;
 
 public class PlayerValuesHandler : MonoBehaviour
 {
-
     AllPlayerValues allPlayerValues;
-    public PlayerValuesHandler()
+    void Awake()
     {
         allPlayerValues = new AllPlayerValues();
     }
-    public PlayerValues AddPlayer(string playerName, Vector2 velocity, Vector2 coordinate)
+    public PlayerValues AddPlayer(string playerName, Vector2 velocity, Vector2 position)
     {
-        PlayerValues newPlayer = new PlayerValues(playerName, velocity, coordinate)
+        PlayerValues newPlayer = new PlayerValues(playerName, velocity, position)
         {
             currentState = typeof(PlayerStateNull).ToString()
         };
         allPlayerValues.AddPlayer(newPlayer);
         return newPlayer;
     }
-    public void ValueSave(Vector2 velocity, Vector2 coordinate, System.Type currentState,PlayerValues player)
+    public PlayerValues AddPlayer(PlayerValues playerValues)
+    {
+        allPlayerValues.AddPlayer(playerValues);
+        return playerValues;
+    }
+    public void ValueSave(Vector2 velocity, Vector2 position, System.Type currentState,PlayerValues player)
     {
         player.curVelocity = velocity;
-        player.coordinate = coordinate;
+        player.position = position;
         player.currentState = currentState.ToString();
     }
-    public void ValueSave(Vector2 velocity, Vector2 coordinate, System.Type currentState, bool isJumpBoosted, float jumpBoostedTime,PlayerValues player)
+    public void ValueSave(Vector2 velocity, Vector2 position, System.Type currentState, bool isJumpBoosted, float jumpBoostedTime,PlayerValues player)
     {
         player.curVelocity = velocity;
-        player.coordinate = coordinate;
+        player.position = position;
         player.currentState = currentState.ToString();
         player.isJumpBoosted = isJumpBoosted;
         player.jumpBoostedTime = jumpBoostedTime;
@@ -76,4 +80,5 @@ public class PlayerValuesHandler : MonoBehaviour
             return m.FirstOrDefault();
         }
     }
+
 }
