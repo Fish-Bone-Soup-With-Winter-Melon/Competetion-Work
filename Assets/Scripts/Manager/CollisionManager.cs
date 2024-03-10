@@ -8,6 +8,7 @@ public class CollisionManager : MonoBehaviour
 {
     public PlayerValues playerValues;
     public Rigidbody2D rigidbody2D_1;
+    public SceneControllerI sceneController;
     public GameObject gameObject_1;
     // public PlayerStateMachine playerStateMachine;
     public Collider2D collider2D_1;
@@ -30,6 +31,7 @@ public class CollisionManager : MonoBehaviour
         // gameObject = GetComponent<GameObject>();
         rigidbody2D_1 = GetComponent<Rigidbody2D>();
         gameObject_1 = GetComponent<GameObject>();
+        sceneController = GetComponent<SceneControllerI>();
         // playerStateMachine = GetComponent<PlayerStateMachine>();
         collider2D_1 = GetComponent<Collider2D>();
         playerController = GetComponent<PlayerController>();
@@ -97,6 +99,9 @@ public class CollisionManager : MonoBehaviour
                 //mirror the gameobject
                 gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
                 timerGravityReverse = 0;
+                break;
+            case "Sakiko":
+                sceneController.LoadScene();
                 break;
         }
     }
