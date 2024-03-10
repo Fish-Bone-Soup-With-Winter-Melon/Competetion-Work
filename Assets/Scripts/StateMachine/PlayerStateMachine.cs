@@ -21,6 +21,10 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateAfterDash playerStateAfterDash;
     public CollisionManager collisionManager;
     public PlayerTerrain playerTerrain;
+    public CircleCollider2D[] circleCollider2Ds;
+    public BoxCollider2D boxCollider2D;
+    public PlayerStateDash playerStateDash;
+    public LayerMask layerMask;
     //在这里设置角色初始数据
     void Awake()
     {
@@ -32,6 +36,8 @@ public class PlayerStateMachine : StateMachine
         playerController = GetComponent<PlayerController>();
         actionController = GetComponent<ActionController>();
         collisionManager = GetComponent<CollisionManager>();
+        circleCollider2Ds = GetComponents<CircleCollider2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         playerTerrain.playerValues = playerValues;
         speedBoost = playerValues.boostVelocity;
         collisionManager.playerValues = playerValues;
@@ -49,8 +55,11 @@ public class PlayerStateMachine : StateMachine
         playerStateInAir.Initialize(this);
         playerStateAfterDash = (PlayerStateAfterDash)stateTable[typeof(PlayerStateAfterDash)];
         playerStateAfterDash.Initialize(this);
+        playerStateDash = (PlayerStateDash)stateTable[typeof(PlayerStateDash)];
+        playerStateDash.Initialize(circleCollider2Ds,boxCollider2D);
 
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerStateDash.tilemapLayer = layerMask;
     }
     protected override void Start()
     {
