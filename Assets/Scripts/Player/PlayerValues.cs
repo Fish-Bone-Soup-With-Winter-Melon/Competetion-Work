@@ -17,20 +17,22 @@ public class PlayerValues : Values
     public float gravityScale = 3;
     public Vector2 jumpVelocity = new Vector2(0, 15);
     public float dashSpeed;
+    public int dashDirection;
     public float dashTimeLimit;
     public Vector2 boostVelocity = new Vector2(0,0);
     public Vector2 terrainVelocity = new Vector2(0,0);
     public Vector2 initialVelocity = new Vector2(12,0);
 
+
     public PlayerValues()//Only for JsonToValue
     {
         currentState = typeof(PlayerStateNull).ToString();
     }
-    public PlayerValues(string playerName, Vector2 velocity, Vector2 coordinate)
+    public PlayerValues(string playerName, Vector2 velocity, Vector2 position)
     {
         this.playerName = playerName;
         this.curVelocity = velocity;
-        this.coordinate = coordinate;
+        this.position = position;
         this.isPlayerCreated = true;
     }
 
@@ -47,8 +49,8 @@ public class AllPlayerValues
     {
         valueList.Add(player);
     }
-    public void AddPlayer(string playerName, Vector2 velocity, Vector2 coordinate)
+    public void AddPlayer(string playerName, Vector2 velocity, Vector2 position)
     {
-        valueList.Add(new PlayerValues(playerName, velocity, coordinate));
+        valueList.Add(new PlayerValues(playerName, velocity, position));
     }
 }

@@ -10,7 +10,7 @@ public class PlayerState : ScriptableObject, IState
 
     protected Rigidbody2D rigidbody2D;
     protected PlayerController playerController;
-    protected PlayerStateMachine playerStateMachine1;
+    public PlayerStateMachine playerStateMachine1;
     public ActionController actionController;
     protected PlayerValues playerValues;
     public void Initialize(Animator animator, PlayerStateMachine stateMachine, Rigidbody2D rigidbody2D, PlayerController playerController,ActionController actionController,PlayerValues playerValues)
