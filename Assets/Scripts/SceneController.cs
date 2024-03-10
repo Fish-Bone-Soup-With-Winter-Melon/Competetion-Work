@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SceneControllerI : MonoBehaviour
 {
-    string[] SceneList = { "op","Scenes/init","debug","debug1" };
+    string[] SceneList = { "op","init","debug","debug1" };
     public int pointer;
     public void LoadScene()
     {
