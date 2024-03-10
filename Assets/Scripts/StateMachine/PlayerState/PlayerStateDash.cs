@@ -8,11 +8,11 @@ using UnityEngine.Scripting.APIUpdating;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Dash", fileName = "PlayerState_Dash")]
 public class PlayerStateDash : PlayerState
 {
-    private float timer;
+    public float timer;
     public float dashTimeLimit = 0.6f;
     public float inputTimeLimit = 0.05f;
     public float dashSpeed;
-    private bool isDashed;
+    public bool isDashed;
     public float halfDashSpeed;
     public CircleCollider2D[] circleCollider2Ds;
     public LayerMask tilemapLayer;
@@ -24,11 +24,11 @@ public class PlayerStateDash : PlayerState
         this.circleCollider2Ds = circleCollider2Ds;
         this.boxCollider2D = boxCollider2D;
     }
-    private enum Direction
+    public enum Direction
     {
         Right, Left, Up, Down, RightUp, RightDown, LeftUp, LeftDown, Default
     }
-    private Direction direction = Direction.Default;
+    public Direction direction = Direction.Default;
     public void Identify()
     {
         if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
@@ -184,6 +184,23 @@ public class PlayerStateDash : PlayerState
 
         boxCollider2D.size -= new Vector2(0, 0.2f);
         Debug.Log("Dash Exit");
+        if (playerStateMachine1 == null)
+        {
+            Debug.Log("PlayerStateMachine1 is null");
+        }
+        else
+        {
+            Debug.Log("PlayerStateMachine1 is not null");
+            if (playerStateMachine1.playerValuesHandler == null)
+            {
+                Debug.Log("PlayerValuesHandler is null");
+            }
+            else
+            {
+                Debug.Log("PlayerValuesHandler is not null");
+            }
+        }
+        //stateMachine.playerValuesHandler.ValuesToJson();
         // 也许可以加入冲刺后的惯性
     }
     public RaycastHit2D CreateOffsetRaycast(Vector2 offset, Vector2 diraction, float length, LayerMask layer)
@@ -194,41 +211,6 @@ public class PlayerStateDash : PlayerState
         Color rayColor = hit ? Color.red : Color.green;
         Debug.DrawRay(playerPosition + offset, diraction * length, rayColor);
         return hit;
-    }
-    public float rayLength = 1.8f;
-
-    public void CheckIsOnHorizontalGround(/*int state*/)
-    {
-        //TODO:STATE
-
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.25f, 0.0f), Vector2.down, rayLength, tilemapLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.10f, 0.0f), Vector2.down, rayLength, tilemapLayer);
-        if (leftCheckRay || rightCheckRay)
-        {
-            isGround = true;
-        }
-        else
-        {
-            isGround = false;
-        }
-        // Debug.Log(isGround);
-    }
-
-    public void CheckIsOnHorizontalFloor(/*int state*/)
-    {
-        //TODO:STATE
-
-        RaycastHit2D leftCheckRay = CreateOffsetRaycast(new Vector2(-0.25f, 0.0f), Vector2.down, rayLength, tilemapLayer);
-        RaycastHit2D rightCheckRay = CreateOffsetRaycast(new Vector2(0.10f, 0.0f), Vector2.down, rayLength, tilemapLayer);
-        if (leftCheckRay || rightCheckRay)
-        {
-            isFloor = true;
-        }
-        else
-        {
-            isFloor = false;
-        }
-        // Debug.Log(isGround);
     }
 }
 
