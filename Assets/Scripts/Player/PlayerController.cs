@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("isIce: " + isIce + " isGround: " + isGround + " isMud: " + isMud);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("SpeedBoost"))
         {
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             //Destroy(other.gameObject);
         }
     }
-
+    */
 
 
 

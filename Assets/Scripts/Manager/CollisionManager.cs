@@ -103,6 +103,11 @@ public class CollisionManager : MonoBehaviour
             case "Sakiko":
                 sceneController.LoadScene();
                 break;
+            case "Death":
+                sceneController.GetComponent<SceneControllerI>();
+                sceneController.ReloadScene();
+                Debug.Log("Death");
+                break;
         }
     }
 }
