@@ -1,0 +1,40 @@
+
+{
+    "valueList" : [
+        {
+            "playerName" : null,
+            "isPlayerCreated" : false,
+            "isJumpBoosted"   : false,
+            "jumpBoostedTime" : 0,
+            "gravityScale"    : 3,
+            "jumpVelocity"    : {
+                "x" : 0.0,
+                "y" : 15.0
+            },
+            "dashSpeed"       : 0,
+            "dashDirection"   : 0,
+            "dashTimeLimit"   : 0,
+            "boostVelocity"   : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "terrainVelocity" : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "initialVelocity" : {
+                "x" : 12.0,
+                "y" : 0.0
+            },
+            "curVelocity"     : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "position"        : {
+                "x" : 0.0,
+                "y" : 0.0
+            },
+            "currentState"    : "PlayerStateDash"
+        }
+    ]
+}
