@@ -104,7 +104,6 @@ public class CollisionManager : MonoBehaviour
                 sceneController.LoadScene();
                 break;
             case "Death":
-                sceneController.GetComponent<SceneControllerI>();
                 sceneController.ReloadScene();
                 Debug.Log("Death");
                 break;
