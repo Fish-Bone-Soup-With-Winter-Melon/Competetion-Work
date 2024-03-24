@@ -29,18 +29,18 @@ public class PlayerStateMachine : StateMachine
     //在这里设置角色初始数据
     void Awake()
     {
-        playerValuesHandler = GameObject.Find("PlayerValuesHandler").GetComponent<PlayerValuesHandler>();
-        if (playerValuesHandler == null)
+        //playerValuesHandler = GameObject.Find("PlayerValuesHandler").GetComponent<PlayerValuesHandler>();
+        //if (playerValuesHandler == null)
         {
-            Debug.LogError("PlayerValuesHandler is null");
+           // Debug.LogError("PlayerValuesHandler is null");
         }
-        else
+        //else
         {
-            Debug.Log("True");
+            //Debug.Log("True");
         }
         playerTerrain = GetComponent<PlayerTerrain>();
         playerValues = new PlayerValues();
-        playerValuesHandler.AddPlayer(playerValues);
+        //playerValuesHandler.AddPlayer(playerValues);
         stateTable = new Dictionary<System.Type, IState>(states.Length);
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
